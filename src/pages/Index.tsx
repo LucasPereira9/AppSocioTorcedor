@@ -1,15 +1,20 @@
+/* eslint-disable react-native/no-inline-styles */
 /**
  * @format
  */
-import React from 'react';
+import React, {Fragment} from 'react';
 import {Container} from './style';
-import Header from './Header';
+import Header from '../components/Header';
+import {SafeAreaView} from 'react-native';
 
 const Index = () => {
   return (
-    <Container>
-      <Header />
-    </Container>
+    <Fragment>
+      <SafeAreaView style={{flex: 1, backgroundColor: '#024289'}} />
+      <Container>
+        <Header />
+      </Container>
+    </Fragment>
   );
 };
 export default Index;

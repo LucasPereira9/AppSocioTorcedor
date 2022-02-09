@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Top} from './style';
+import {Container, Top} from '../pages/style';
 import {Image, StyleSheet, Text} from 'react-native';
 
 const Header = () => {
