@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container} from '../pages/style';
+import {Container} from '../../pages/style';
 import {Image, StyleSheet, Text} from 'react-native';
 import {Top} from './style';
 import Caretdown from 'react-native-vector-icons/AntDesign';
@@ -10,7 +10,7 @@ const Header = () => {
       <Top>
         <Image
           style={styles.imagem}
-          source={require('../assets/Barcelona.png')}
+          source={require('../../assets/Barcelona.png')}
         />
         <Text style={styles.text}>OLÁ, LUCAS</Text>
       </Top>
