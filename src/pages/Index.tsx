@@ -1,9 +1,6 @@
-/**
- * @format
- */
 import React from 'react';
 import {Container} from './style';
-import Header from './Header';
+import Header from '../components/Header';
 
 const Index = () => {
   return (
