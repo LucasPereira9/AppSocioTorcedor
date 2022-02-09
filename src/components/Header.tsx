@@ -1,6 +1,8 @@
 import React from 'react';
-import {Container, Top} from '../pages/style';
+import {Container} from '../pages/style';
 import {Image, StyleSheet, Text} from 'react-native';
+import {Top} from './style';
+import {AiFillAlert} from 'react-icons/ai';
 
 const Header = () => {
   return (
@@ -10,6 +12,7 @@ const Header = () => {
           style={styles.imagem}
           source={require('../assets/Barcelona.png')}
         />
+        <AiFillAlert />
         <Text style={styles.text}>OLÁ, LUCAS</Text>
       </Top>
     </Container>
