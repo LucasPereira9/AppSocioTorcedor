@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const DetailContainer = styled.View`
   width: 360px;
   height: 350px;
-  background: #cc2121;
+  background: #b41e1e;
   margin: 40px;
   border-radius: 15px;
   box-shadow: 70px 20px 20px #000;
@@ -16,7 +16,7 @@ export const Icon = styled.View`
 export const Content = styled.View`
   width: 360px;
   flex: 1;
-  background: #bdb2b21c;
+  background: #bdb2b244;
   border-radius: 10px;
   margin-top: 30px;
 `;
