@@ -1,22 +1,86 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Container} from '../../pages/style';
-import {DetailContainer, Icon, Content} from './styles';
+import {
+  DetailContainer,
+  Icon,
+  Content,
+  NextGame,
+  ButtonContainer,
+  TextContent,
+} from './styles';
 import Caretdown from 'react-native-vector-icons/Feather';
-import {Text, StyleSheet, View} from 'react-native';
+import {Text, StyleSheet, Image, Button, Linking, View} from 'react-native';
 
 const Details = () => {
+  const [isOpenEye, setIsOpenEye] = useState(true);
   return (
     <Container>
       <DetailContainer>
         <Icon>
-          <Caretdown name="dollar-sign" size={28} color="#c2bdbd" />
-          <Caretdown name="eye-off" size={32} color="#c2bdbd" />
+          <Caretdown name="user-check" size={25} color="#ffffffdf" />
+          <Caretdown
+            name={isOpenEye ? 'eye-off' : 'eye'}
+            size={32}
+            color="#ffffffd6"
+            onPress={() => {
+              if (isOpenEye) {
+                setIsOpenEye(false);
+              } else {
+                setIsOpenEye(true);
+              }
+            }}
+          />
         </Icon>
         <Text style={styles.text}>Saldo Disponivel</Text>
-        <Text style={styles.value}>R$ 12.234,00</Text>
+        <Text style={styles.value}>
+          R$
+          {isOpenEye ? (
+            '12.234,00'
+          ) : (
+            <View
+              // eslint-disable-next-line react-native/no-inline-styles
+              style={{
+                backgroundColor: '#ffffff70',
+                borderRadius: 15,
+                height: 32,
+                width: 100,
+              }}
+            />
+          )}
+        </Text>
         <Content>
-          <Text style={styles.text2}>Proximo Jogo</Text>
-          <Text style={styles.text2}>TESTE TESTE TESTE</Text>
+          <TextContent>
+            <Text style={styles.text2}>Proximo Jogo:</Text>
+            <Text style={styles.text2}>22/03 ás 14:00</Text>
+          </TextContent>
+
+          <NextGame>
+            <Image
+              style={styles.image}
+              source={require('../../assets/Barcelona.png')}
+            />
+            <Caretdown
+              style={styles.versus}
+              name="x"
+              size={28}
+              color="#ffffffd6"
+            />
+            <Image
+              style={styles.image2}
+              source={require('../../assets/RealMadri.png')}
+            />
+          </NextGame>
+          <ButtonContainer>
+            <Button
+              title="COMPRAR INGRESSO"
+              onPress={() =>
+                Linking.openURL(
+                  'https://www.fcbarcelona.com/en/tickets/football',
+                )
+              }
+              color="#024189ed"
+            />
+          </ButtonContainer>
         </Content>
       </DetailContainer>
     </Container>
@@ -37,8 +101,29 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   text2: {
-    color: '#FFF',
-    fontSize: 20,
-    marginLeft: 30,
+    color: '#c5c3c3',
+    fontSize: 18,
+    marginLeft: 10,
+    marginTop: 10,
+  },
+  image: {
+    width: 60,
+    height: 60,
+    marginLeft: 20,
+    marginTop: 6,
+    borderRadius: 10,
+  },
+  image2: {
+    width: 60,
+    height: 60,
+    marginLeft: 20,
+    borderRadius: 10,
+  },
+  versus: {
+    marginLeft: 20,
+  },
+  button: {
+    width: 50,
+    height: 20,
   },
 });
