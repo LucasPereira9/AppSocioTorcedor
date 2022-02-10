@@ -57,7 +57,7 @@ const Details = () => {
           <NextGame>
             <Image
               style={styles.image}
-              source={require('../../assets/Barcelona.png')}
+              source={require('../../assets/Barcelona.jpg')}
             />
             <Caretdown
               style={styles.versus}
@@ -67,7 +67,7 @@ const Details = () => {
             />
             <Image
               style={styles.image2}
-              source={require('../../assets/RealMadri.png')}
+              source={require('../../assets/RealMadri.jpg')}
             />
           </NextGame>
           <ButtonContainer>

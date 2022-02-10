@@ -11,7 +11,7 @@ const Header = () => {
       <Top>
         <Image
           style={styles.imagem}
-          source={require('../../assets/Barcelona.png')}
+          source={require('../../assets/Barcelona.jpg')}
         />
         <Text style={styles.text}>OLÁ, LUCAS</Text>
       </Top>
