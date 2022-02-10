@@ -17,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.1.17",
     "native-base": "3.2.1",
     "react": "17.0.1",
+    "react-icons": "^4.3.1",
     "react-native": "0.64.1",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-svg": "^12.1.1",
