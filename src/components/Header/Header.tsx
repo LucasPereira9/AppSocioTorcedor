@@ -3,6 +3,7 @@ import {Container} from '../../pages/style';
 import {Image, StyleSheet, Text} from 'react-native';
 import {Top} from './style';
 import Caretdown from 'react-native-vector-icons/AntDesign';
+import Details from '../AccountDetails/Details';
 
 const Header = () => {
   return (
@@ -15,6 +16,7 @@ const Header = () => {
         <Text style={styles.text}>OLÁ, LUCAS</Text>
       </Top>
       <Caretdown name="caretdown" size={25} color="#FFF" />
+      <Details />
     </Container>
   );
 };
