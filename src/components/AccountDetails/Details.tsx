@@ -20,7 +20,7 @@ const Details = () => {
           <Caretdown name="user-check" size={25} color="#ffffffdf" />
           <Caretdown
             name={isOpenEye ? 'eye-off' : 'eye'}
-            size={32}
+            size={38}
             color="#ffffffd6"
             onPress={() => {
               if (isOpenEye) {
@@ -57,7 +57,7 @@ const Details = () => {
           <NextGame>
             <Image
               style={styles.image}
-              source={require('../../assets/Barcelona.png')}
+              source={require('../../assets/Barcelona.jpg')}
             />
             <Caretdown
               style={styles.versus}
@@ -67,17 +67,13 @@ const Details = () => {
             />
             <Image
               style={styles.image2}
-              source={require('../../assets/RealMadri.png')}
+              source={require('../../assets/RealMadri.jpg')}
             />
           </NextGame>
           <ButtonContainer>
             <Button
               title="COMPRAR INGRESSO"
-              onPress={() =>
-                Linking.openURL(
-                  'https://www.fcbarcelona.com/en/tickets/football',
-                )
-              }
+              onPress={() => Linking.openURL('')}
               color="#024189ed"
             />
           </ButtonContainer>
