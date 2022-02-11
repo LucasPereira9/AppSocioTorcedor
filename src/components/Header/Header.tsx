@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   imagem: {
     width: 95,
     height: 95,
+    // resizeMode: 'cover',
     borderRadius: 50,
   },
   text: {
