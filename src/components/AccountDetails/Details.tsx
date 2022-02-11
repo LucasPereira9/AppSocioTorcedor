@@ -9,7 +9,15 @@ import {
   TextContent,
 } from './styles';
 import Caretdown from 'react-native-vector-icons/Feather';
-import {Text, StyleSheet, Image, Button, Linking, View} from 'react-native';
+import {
+  Text,
+  StyleSheet,
+  Image,
+  Button,
+  Linking,
+  View,
+  Alert,
+} from 'react-native';
 
 const Details = () => {
   const [isOpenEye, setIsOpenEye] = useState(true);
@@ -40,7 +48,7 @@ const Details = () => {
             <View
               // eslint-disable-next-line react-native/no-inline-styles
               style={{
-                backgroundColor: '#ffffff70',
+                backgroundColor: '#0000006f',
                 borderRadius: 15,
                 height: 32,
                 width: 100,
@@ -57,7 +65,7 @@ const Details = () => {
           <NextGame>
             <Image
               style={styles.image}
-              source={require('../../assets/Barcelona.jpg')}
+              source={require('../../assets/reservabarça.jpg')}
             />
             <Caretdown
               style={styles.versus}
@@ -73,7 +81,9 @@ const Details = () => {
           <ButtonContainer>
             <Button
               title="COMPRAR INGRESSO"
-              onPress={() => Linking.openURL('')}
+              onPress={() =>
+                Alert.alert('Perdão torcedor! Botão em manutenção. :(')
+              }
               color="#024189ed"
             />
           </ButtonContainer>
@@ -117,9 +127,5 @@ const styles = StyleSheet.create({
   },
   versus: {
     marginLeft: 20,
-  },
-  button: {
-    width: 50,
-    height: 20,
   },
 });
