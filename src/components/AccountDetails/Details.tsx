@@ -17,7 +17,7 @@ const Details = () => {
     <Container>
       <DetailContainer>
         <Icon>
-          <Caretdown name="user-check" size={25} color="#ffffffdf" />
+          <Caretdown name="credit-card" size={24} color="#ffffffdf" />
           <Caretdown
             name={isOpenEye ? 'eye-off' : 'eye'}
             size={38}

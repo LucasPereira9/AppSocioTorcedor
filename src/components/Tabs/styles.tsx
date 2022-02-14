@@ -24,3 +24,11 @@ export const Icon = styled.View`
   justify-content: center;
   margin-bottom: 8px;
 `;
+export const Notification = styled.View`
+  height: 25px;
+  width: 20px;
+  background: #faea07;
+  margin-left: 100px;
+  border-radius: 1000px;
+  display: flex;
+`;
