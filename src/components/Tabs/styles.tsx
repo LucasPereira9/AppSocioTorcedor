@@ -18,6 +18,9 @@ export const TabsContainer = styled.View`
 `;
 
 export const Icon = styled.View`
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
 `;

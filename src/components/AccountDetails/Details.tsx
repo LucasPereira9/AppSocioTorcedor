@@ -74,7 +74,7 @@ const Details = () => {
             <Button
               title="COMPRAR INGRESSO"
               onPress={() =>
-                Alert.alert('Perdão torcedor! Botão em manutenção.')
+                Alert.alert('Perdão torcedor! Botão em manutenção...')
               }
               color="#024189ed"
             />
