@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const DetailContainer = styled.View`
   width: 360px;
-  height: 360px;
+  height: 350px;
   background: #b41e1e;
   margin: 40px;
   border-radius: 6px;

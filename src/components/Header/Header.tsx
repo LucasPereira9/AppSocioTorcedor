@@ -16,7 +16,7 @@ const Header = () => {
         />
         <Text style={styles.text}>OLÁ, LUCAS</Text>
       </Top>
-      <Caretdown name="caretdown" size={25} color="#FFF" />
+      <Caretdown name="caretdown" size={16} color="#FFF" />
       <Details />
       <Tabs />
     </Container>

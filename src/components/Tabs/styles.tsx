@@ -7,8 +7,8 @@ export const Container = styled.View`
 
 export const TabsContainer = styled.View`
   width: 120px;
-  height: 130px;
-  background: #b41e1e;
+  height: 127px;
+  background: #b41e1ee1;
   margin-bottom: 24px;
   margin-left: 10px;
   margin-right: 10px;
@@ -30,5 +30,5 @@ export const Notification = styled.View`
   background: #faea07;
   margin-left: 100px;
   border-radius: 1000px;
-  display: flex;
+  margin-top: 3px;
 `;
