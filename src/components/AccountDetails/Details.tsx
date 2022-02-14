@@ -9,15 +9,7 @@ import {
   TextContent,
 } from './styles';
 import Caretdown from 'react-native-vector-icons/Feather';
-import {
-  Text,
-  StyleSheet,
-  Image,
-  Button,
-  Linking,
-  View,
-  Alert,
-} from 'react-native';
+import {Text, StyleSheet, Image, Button, View, Alert} from 'react-native';
 
 const Details = () => {
   const [isOpenEye, setIsOpenEye] = useState(true);
@@ -48,7 +40,7 @@ const Details = () => {
             <View
               // eslint-disable-next-line react-native/no-inline-styles
               style={{
-                backgroundColor: '#0000006f',
+                backgroundColor: '#302d2d6e',
                 borderRadius: 15,
                 height: 32,
                 width: 100,
@@ -82,7 +74,7 @@ const Details = () => {
             <Button
               title="COMPRAR INGRESSO"
               onPress={() =>
-                Alert.alert('Perdão torcedor! Botão em manutenção. :(')
+                Alert.alert('Perdão torcedor! Botão em manutenção.')
               }
               color="#024189ed"
             />
