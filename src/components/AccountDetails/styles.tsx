@@ -7,7 +7,9 @@ export const DetailContainer = styled.View`
   background: #b41e1e;
   margin: 18px;
   border-radius: 12px;
-  margin-top: 290px;
+  position: absolute;
+  top: 340px;
+  z-index: 5;
 `;
 export const Icon = styled.View`
   justify-content: space-between;
