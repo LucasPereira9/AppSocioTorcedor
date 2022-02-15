@@ -8,11 +8,12 @@ export const Container = styled.View`
 export const TabsContainer = styled.View`
   width: 120px;
   height: 127px;
-  background: #b41e1ee1;
+  background: #b41e1eeb;
   margin-bottom: 24px;
   margin-left: 10px;
   margin-right: 10px;
-  border-radius: 15px;
+  margin-bottom: 54px;
+  border-radius: 25px;
   align-items: center;
   justify-content: center;
 `;
@@ -28,7 +29,8 @@ export const Notification = styled.View`
   height: 25px;
   width: 20px;
   background: #faea07;
-  margin-left: 100px;
   border-radius: 1000px;
-  margin-top: 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
 `;

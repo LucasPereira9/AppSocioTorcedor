@@ -35,7 +35,7 @@ const Details = () => {
         <Text style={styles.value}>
           R$
           {isOpenEye ? (
-            '12.234,00'
+            '1,69'
           ) : (
             <View
               // eslint-disable-next-line react-native/no-inline-styles
@@ -89,7 +89,6 @@ export default Details;
 const styles = StyleSheet.create({
   text: {
     fontSize: 16,
-    paddingTop: 25,
     paddingLeft: 10,
     color: '#c5c3c3',
   },
