@@ -19,16 +19,16 @@ const Background = () => {
       </QRcodeView>
       <OptionsContainer>
         <Option>
-          <Caretdown name="credit-card" size={24} color="#ffffffdf" />
-          <Text style={styles.text}>TESTE</Text>
+          <Caretdown name="user" size={22} color="#ffffffdf" />
+          <Text style={styles.text}>Dados Cadastrais</Text>
         </Option>
         <Option>
-          <Caretdown name="credit-card" size={24} color="#ffffffdf" />
-          <Text style={styles.text}>TESTE</Text>
+          <Caretdown name="bell-off" size={22} color="#ffffffdf" />
+          <Text style={styles.text}>Notificações de partidas</Text>
         </Option>
         <Option>
-          <Caretdown name="credit-card" size={24} color="#ffffffdf" />
-          <Text style={styles.text}>TESTE</Text>
+          <Caretdown name="settings" size={22} color="#ffffffdf" />
+          <Text style={styles.text}>Configurações</Text>
         </Option>
       </OptionsContainer>
       <ButtonContainer>
