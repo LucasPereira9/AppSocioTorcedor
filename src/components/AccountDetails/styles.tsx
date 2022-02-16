@@ -1,5 +1,10 @@
 import styled from 'styled-components/native';
 
+export const Container = styled.View`
+  flex: 1;
+  align-items: center;
+`;
+
 export const DetailContainer = styled.View`
   display: flex;
   width: 330px;
@@ -7,7 +12,7 @@ export const DetailContainer = styled.View`
   background: #b41e1e;
   margin: 18px;
   border-radius: 12px;
-  position: absolute;
+  position: relative;
 `;
 export const Icon = styled.View`
   justify-content: space-between;

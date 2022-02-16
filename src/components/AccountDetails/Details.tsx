@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Container} from '../../pages/style';
 import {
   DetailContainer,
   Icon,
@@ -7,6 +6,7 @@ import {
   NextGame,
   ButtonContainer,
   TextContent,
+  Container,
 } from './styles';
 import Caretdown from 'react-native-vector-icons/Feather';
 import {Text, StyleSheet, Image, Button, View, Alert} from 'react-native';
