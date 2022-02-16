@@ -8,8 +8,8 @@ export const DetailContainer = styled.View`
   margin: 18px;
   border-radius: 12px;
   position: absolute;
-  top: 340px;
-  z-index: 5;
+  top: 390px;
+  z-index: -5;
 `;
 export const Icon = styled.View`
   justify-content: space-between;
