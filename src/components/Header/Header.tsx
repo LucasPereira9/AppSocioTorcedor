@@ -36,10 +36,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
-  text3: {
-    zIndex: -1,
-    color: '#1eff00',
-    position: 'absolute',
-    top: 160,
-  },
 });

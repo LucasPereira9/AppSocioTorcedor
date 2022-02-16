@@ -1,7 +1,7 @@
 import React from 'react';
-import {QRcodeView, Container, ViewItem} from './Styles';
+import {Container, QRcodeView, ViewItem, ButtonContainer} from './Styles';
 import QRCode from 'react-native-qrcode-svg';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Button, Alert} from 'react-native';
 import Caretdown from 'react-native-vector-icons/AntDesign';
 
 const Background = () => {
@@ -29,6 +29,13 @@ const Background = () => {
           <Text style={styles.text}>EXEMPLO 4</Text>
         </ViewItem>
       </View>
+      <ButtonContainer>
+        <Button
+          title="Trocar de conta"
+          onPress={() => Alert.alert('Perdão torcedor! Botão em manutenção...')}
+          color="#024189a0"
+        />
+      </ButtonContainer>
     </Container>
   );
 };
