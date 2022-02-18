@@ -8,7 +8,7 @@ export const Container = styled.View`
 export const DetailContainer = styled.View`
   display: flex;
   width: 350px;
-  height: 348px;
+  height: 330px;
   background: #b41e1e;
   margin: 18px;
   border-radius: 12px;
@@ -36,7 +36,7 @@ export const ButtonContainer = styled.View`
   width: 140px;
   height: 290px;
   margin-left: 190px;
-  padding-top: 20px;
+  padding-top: 11px;
   margin-top: 15px;
 `;
 export const TextContent = styled.View`

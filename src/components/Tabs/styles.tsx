@@ -8,7 +8,7 @@ export const Container = styled.View`
 
 export const TabsContainer = styled.View`
   width: 120px;
-  height: 127px;
+  height: 107px;
   background: #b41e1eeb;
   margin-bottom: 24px;
   margin-left: 10px;
