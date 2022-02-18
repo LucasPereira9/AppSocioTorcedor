@@ -13,7 +13,7 @@ export const TabsContainer = styled.View`
   margin-bottom: 24px;
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 54px;
+  margin-bottom: 38px;
   border-radius: 25px;
   align-items: center;
   justify-content: center;
