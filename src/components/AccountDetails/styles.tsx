@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex: 1;
   align-items: center;
+  z-index: 10;
 `;
 
 export const DetailContainer = styled.View`

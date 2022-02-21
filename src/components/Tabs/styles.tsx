@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   justify-content: space-between;
   flex-direction: row;
-  z-index: -2;
+  z-index: -1;
 `;
 
 export const TabsContainer = styled.View`
