@@ -15,7 +15,11 @@ const Background = () => {
   return (
     <Container>
       <QRcodeView>
-        <QRCode value={'https://google.com'} size={86} color={'#ff0000'} />
+        <QRCode
+          value={'https://www.linkedin.com/in/lucas-pereira-5280b9206/'}
+          size={86}
+          color={'#ff0000'}
+        />
       </QRcodeView>
       <OptionsContainer>
         <Option>
