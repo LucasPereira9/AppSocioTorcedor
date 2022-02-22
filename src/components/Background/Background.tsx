@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   Container,
@@ -11,7 +10,7 @@ import QRCode from 'react-native-qrcode-svg';
 import {StyleSheet, Text, Button, Alert} from 'react-native';
 import Caretdown from 'react-native-vector-icons/Feather';
 
-const Background = () => {
+const Background = ({translateY}: any) => {
   return (
     <Container>
       <QRcodeView>

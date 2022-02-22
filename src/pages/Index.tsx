@@ -3,6 +3,7 @@ import {Container} from './style';
 import Header from '../components/Header/Header';
 import {StatusBar} from 'native-base';
 import Tabs from '../components/Tabs/Tabs';
+import Background from '../components/Background/Background';
 
 const Index = () => {
   return (

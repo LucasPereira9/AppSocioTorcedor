@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   position: absolute;
-  top: 163px;
+  top: 21px;
   z-index: -20;
 `;
 export const QRcodeView = styled.View`

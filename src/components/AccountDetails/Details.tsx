@@ -19,6 +19,7 @@ import {
   Animated,
   PanResponder,
 } from 'react-native';
+import Background from '../Background/Background';
 
 const Details = () => {
   const [isOpenEye, setIsOpenEye] = useState(true);
@@ -38,26 +39,26 @@ const Details = () => {
       onPanResponderRelease: () => {
         pan.flattenOffset();
       },
-      onPanResponderTerminationRequest: () => true,
-      onPanResponderTerminate: () => {
-        // eslint-disable-next-line no-labels
-        y: pan.y.setValue(4);
-      },
     }),
   )[0];
-
   return (
     <Container>
+      <Background translateY={pan.y} />
       <Animated.View
         style={{
-          // eslint-disable-next-line prettier/prettier
-          transform: [{ translateY: pan.y.interpolate({
+          transform: [
+            {
+              translateY: pan.y.interpolate({
                 inputRange: [-290, 0, 340],
-                outputRange: [-8, 0, 340],
+                outputRange: [-20, 0, 340],
                 extrapolate: 'clamp',
               }),
             },
           ],
+          // opacity: pan.y.interpolate({
+          //   inputRange: [0, 150],
+          //   outputRange: [0, 1],
+          // }),
         }}
         {...panResponder.panHandlers}>
         <DetailContainer>
@@ -167,4 +168,3 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
 });
-export const lucas = ;
