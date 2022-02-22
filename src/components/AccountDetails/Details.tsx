@@ -23,9 +23,9 @@ import {
 const Details = () => {
   const [isOpenEye, setIsOpenEye] = useState(true);
 
-  const pan = useRef(new Animated.ValueXY()).current;
+  const pan = useState(new Animated.ValueXY())[0];
 
-  const panResponder = useRef(
+  const panResponder = useState(
     PanResponder.create({
       onMoveShouldSetPanResponder: () => true,
       onPanResponderGrant: () => {
@@ -39,7 +39,7 @@ const Details = () => {
         pan.flattenOffset();
       },
     }),
-  ).current;
+  )[0]
 
   return (
     <Container>
