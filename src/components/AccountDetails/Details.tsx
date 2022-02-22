@@ -1,4 +1,4 @@
-import React, {useState, UseRef, useRef} from 'react';
+import React, {useState} from 'react';
 import {
   DetailContainer,
   Icon,
@@ -38,15 +38,26 @@ const Details = () => {
       onPanResponderRelease: () => {
         pan.flattenOffset();
       },
+      onPanResponderTerminationRequest: () => true,
+      onPanResponderTerminate: () => {
+        // eslint-disable-next-line no-labels
+        y: pan.y.setValue(4);
+      },
     }),
-  )[0]
+  )[0];
 
   return (
     <Container>
       <Animated.View
         style={{
           // eslint-disable-next-line prettier/prettier
-          transform: [{ translateY: pan.y }],
+          transform: [{ translateY: pan.y.interpolate({
+                inputRange: [-290, 0, 340],
+                outputRange: [-8, 0, 340],
+                extrapolate: 'clamp',
+              }),
+            },
+          ],
         }}
         {...panResponder.panHandlers}>
         <DetailContainer>
@@ -119,6 +130,7 @@ const Details = () => {
     </Container>
   );
 };
+
 export default Details;
 
 const styles = StyleSheet.create({
@@ -155,3 +167,4 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
 });
+export const lucas = ;
