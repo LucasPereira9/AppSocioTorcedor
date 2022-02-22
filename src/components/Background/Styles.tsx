@@ -7,12 +7,13 @@ export const Container = styled(Animated.View)`
   z-index: -20;
 `;
 export const QRcodeView = styled.View`
-  width: 110px;
+  width: 130px;
   padding: 10px;
   border-radius: 6px;
   justify-content: center;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 90px;
+  background: #fff;
 `;
 export const ButtonContainer = styled.View`
   position: absolute;
@@ -21,7 +22,7 @@ export const ButtonContainer = styled.View`
   width: 310px;
   height: 40px;
   border-width: 1px;
-  border-color: #ff0000ab;
+  border-color: #ff00006a;
   justify-content: center;
   border-radius: 4px;
 `;
@@ -31,7 +32,7 @@ export const OptionsContainer = styled.View`
   margin-top: 30px;
   justify-content: space-around;
   border-top-width: 1px;
-  border-color: #ffffff44;
+  border-color: #ff00005e;
 `;
 
 export const Option = styled.View`
@@ -40,6 +41,6 @@ export const Option = styled.View`
   flex-direction: row;
   justify-content: flex-start;
   border-bottom-width: 1px;
-  border-color: #ffffff44;
+  border-color: #e908086c;
   align-items: center;
 `;

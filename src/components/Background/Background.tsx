@@ -15,7 +15,7 @@ const Background = ({translateY}: any) => {
     <Container
       style={{
         opacity: translateY.interpolate({
-          inputRange: [0, 250],
+          inputRange: [0, 300],
           outputRange: [0, 1],
         }),
       }}>
