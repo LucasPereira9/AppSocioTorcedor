@@ -3,12 +3,13 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
   flex: 1;
   align-items: center;
+  z-index: 10;
 `;
 
 export const DetailContainer = styled.View`
   display: flex;
-  width: 330px;
-  height: 328px;
+  width: 350px;
+  height: 330px;
   background: #b41e1e;
   margin: 18px;
   border-radius: 12px;
@@ -35,9 +36,9 @@ export const NextGame = styled.View`
 export const ButtonContainer = styled.View`
   width: 140px;
   height: 290px;
-  margin-left: 180px;
-  padding-top: 8px;
-  margin-top: 10px;
+  margin-left: 190px;
+  padding-top: 11px;
+  margin-top: 15px;
 `;
 export const TextContent = styled.View`
   flex-direction: row;

@@ -4,7 +4,6 @@ import {Image, StyleSheet, Text} from 'react-native';
 import {Top} from './style';
 import Caretdown from 'react-native-vector-icons/AntDesign';
 import Details from '../AccountDetails/Details';
-import Background from '../Background/Background';
 
 const Header = () => {
   return (
@@ -18,7 +17,6 @@ const Header = () => {
       </Top>
       <Caretdown name="caretdown" size={26} color="#FFF" />
       <Details />
-      <Background />
     </Container>
   );
 };

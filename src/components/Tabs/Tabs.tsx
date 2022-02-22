@@ -3,9 +3,25 @@ import {Container, TabsContainer, Icon, Notification} from './styles';
 import {ScrollView, Text, StyleSheet, Alert} from 'react-native';
 import Caretdown from 'react-native-vector-icons/Feather';
 
-const Tabs = () => {
+const Tabs = ({translateY}: any) => {
   return (
-    <Container>
+    <Container
+      style={{
+        transform: [
+          {
+            translateY: translateY.interpolate({
+              inputRange: [0, 340],
+              outputRange: [0, 40],
+              extrapolate: 'clamp',
+            }),
+          },
+        ],
+        opacity: translateY.interpolate({
+          inputRange: [0, 250],
+          outputRange: [1, 0.6],
+          extrapolate: 'clamp',
+        }),
+      }}>
       <ScrollView horizontal={true}>
         <TabsContainer>
           <Icon>

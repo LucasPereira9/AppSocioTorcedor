@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   Container,
@@ -11,11 +10,21 @@ import QRCode from 'react-native-qrcode-svg';
 import {StyleSheet, Text, Button, Alert} from 'react-native';
 import Caretdown from 'react-native-vector-icons/Feather';
 
-const Background = () => {
+const Background = ({translateY}: any) => {
   return (
-    <Container>
+    <Container
+      style={{
+        opacity: translateY.interpolate({
+          inputRange: [0, 250],
+          outputRange: [0, 1],
+        }),
+      }}>
       <QRcodeView>
-        <QRCode value={'https://google.com'} size={86} color={'#ff0000'} />
+        <QRCode
+          value={'https://www.linkedin.com/in/lucas-pereira-5280b9206/'}
+          size={102}
+          color={'#ff0000'}
+        />
       </QRcodeView>
       <OptionsContainer>
         <Option>
