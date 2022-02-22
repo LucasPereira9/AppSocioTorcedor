@@ -1,19 +1,19 @@
+import {Animated} from 'react-native';
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled(Animated.View)`
   justify-content: space-between;
   flex-direction: row;
   z-index: -1;
+  margin-top: 38px;
 `;
 
-export const TabsContainer = styled.View`
+export const TabsContainer = styled(Animated.View)`
   width: 120px;
   height: 107px;
   background: #b41e1eeb;
-  margin-bottom: 24px;
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 38px;
   border-radius: 25px;
   align-items: center;
   justify-content: center;

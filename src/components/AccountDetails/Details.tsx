@@ -20,6 +20,7 @@ import {
   PanResponder,
 } from 'react-native';
 import Background from '../Background/Background';
+import Tabs from '../Tabs/Tabs';
 
 const Details = () => {
   const [isOpenEye, setIsOpenEye] = useState(true);
@@ -128,6 +129,7 @@ const Details = () => {
           </Content>
         </DetailContainer>
       </Animated.View>
+      <Tabs translateY={pan.y} />
     </Container>
   );
 };

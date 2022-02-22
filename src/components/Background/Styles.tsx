@@ -1,13 +1,13 @@
+import {Animated} from 'react-native';
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled(Animated.View)`
   position: absolute;
   top: 21px;
   z-index: -20;
 `;
 export const QRcodeView = styled.View`
   width: 110px;
-  background: #fff;
   padding: 10px;
   border-radius: 6px;
   justify-content: center;
@@ -16,7 +16,7 @@ export const QRcodeView = styled.View`
 `;
 export const ButtonContainer = styled.View`
   position: absolute;
-  top: 285px;
+  top: 290px;
   right: 6px;
   width: 310px;
   height: 40px;
