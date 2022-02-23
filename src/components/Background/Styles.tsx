@@ -22,7 +22,7 @@ export const ButtonContainer = styled.View`
   width: 310px;
   height: 40px;
   border-width: 1px;
-  border-color: #ff00006a;
+  border-color: #ff000096;
   justify-content: center;
   border-radius: 4px;
 `;

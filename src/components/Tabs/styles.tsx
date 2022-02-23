@@ -11,7 +11,7 @@ export const Container = styled(Animated.View)`
 export const TabsContainer = styled(Animated.View)`
   width: 120px;
   height: 107px;
-  background: #b41e1efb;
+  background: #b41e1e;
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 25px;

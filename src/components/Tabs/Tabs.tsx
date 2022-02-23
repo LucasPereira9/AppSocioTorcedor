@@ -11,14 +11,14 @@ const Tabs = ({translateY}: any) => {
           {
             translateY: translateY.interpolate({
               inputRange: [0, 340],
-              outputRange: [0, 40],
+              outputRange: [0, 120],
               extrapolate: 'clamp',
             }),
           },
         ],
         opacity: translateY.interpolate({
           inputRange: [0, 250],
-          outputRange: [1, 0.6],
+          outputRange: [1, 0.2],
           extrapolate: 'clamp',
         }),
       }}>
