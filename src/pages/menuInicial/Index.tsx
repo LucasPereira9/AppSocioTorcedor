@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container} from './style';
-import Header from '../components/Header/Header';
+import Header from '../../components/Header/Header';
 import {StatusBar} from 'native-base';
 
 const Index = () => {

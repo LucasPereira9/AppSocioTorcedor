@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container} from '../../pages/style';
+import {Container} from '../../pages/menuInicial/style';
 import {Image, StyleSheet, Text} from 'react-native';
 import {Top} from './style';
 import Caretdown from 'react-native-vector-icons/AntDesign';

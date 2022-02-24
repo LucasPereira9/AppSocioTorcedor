@@ -82,7 +82,7 @@ const Details = () => {
           <Text style={styles.value}>
             R$
             {isOpenEye ? (
-              '1,69'
+              '1.387,15'
             ) : (
               <View
                 // eslint-disable-next-line react-native/no-inline-styles
