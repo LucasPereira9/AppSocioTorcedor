@@ -37,6 +37,7 @@ const login = () => {
           defaultValue={text}
           placeholderTextColor={'#00000092'}
           returnKeyType={'next'}
+          keyboardType="email-address"
         />
         <Text style={styles.text3}>Senha</Text>
         <TextInput
@@ -49,7 +50,7 @@ const login = () => {
         <ButtonContainer>
           <Button
             title="Entrar"
-            onPress={() => Alert.alert('fdsdsdsdsdsd')}
+            onPress={() => Alert.alert('Em Manutenção...')}
             color="#024189ed"
           />
         </ButtonContainer>
