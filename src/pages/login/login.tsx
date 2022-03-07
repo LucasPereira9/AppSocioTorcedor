@@ -11,7 +11,7 @@ import {
   Button,
 } from 'react-native';
 
-const login = () => {
+const login = ({navigation}: any) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [text, setText] = useState('');
   return (
@@ -50,7 +50,7 @@ const login = () => {
         <ButtonContainer>
           <Button
             title="Entrar"
-            onPress={() => Alert.alert('Em Manutenção...')}
+            onPress={() => navigation.navigate('Index')}
             color="#024189ed"
           />
         </ButtonContainer>
