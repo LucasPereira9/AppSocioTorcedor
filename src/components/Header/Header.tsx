@@ -2,7 +2,7 @@ import React from 'react';
 import {Container} from '../../pages/menuInicial/style';
 import {Image, StyleSheet, Text} from 'react-native';
 import {Top} from './style';
-import Caretdown from 'react-native-vector-icons/AntDesign';
+import Caretdown from 'react-native-vector-icons/Feather';
 import Details from '../AccountDetails/Details';
 
 const Header = () => {
@@ -15,7 +15,6 @@ const Header = () => {
         />
         <Text style={styles.text}>OLÁ, LUCAS</Text>
       </Top>
-      <Caretdown name="caretdown" size={26} color="#FFF" />
       <Details />
     </Container>
   );

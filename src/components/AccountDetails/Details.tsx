@@ -50,8 +50,8 @@ const Details = () => {
           transform: [
             {
               translateY: pan.y.interpolate({
-                inputRange: [-290, 0, 340],
-                outputRange: [-20, 0, 340],
+                inputRange: [-290, 0, 360],
+                outputRange: [-20, 0, 360],
                 extrapolate: 'clamp',
               }),
             },
@@ -62,6 +62,13 @@ const Details = () => {
           // }),
         }}
         {...panResponder.panHandlers}>
+        <Caretdown
+          // eslint-disable-next-line react-native/no-inline-styles
+          style={{position: 'relative', left: 170}}
+          name="chevrons-down"
+          size={35}
+          color="#FFF"
+        />
         <DetailContainer>
           <Icon>
             <Caretdown name="credit-card" size={24} color="#ffffffdf" />

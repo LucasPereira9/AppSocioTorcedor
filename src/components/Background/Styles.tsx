@@ -16,9 +16,8 @@ export const QRcodeView = styled.View`
   background: #fff;
 `;
 export const ButtonContainer = styled.View`
-  position: absolute;
-  top: 290px;
-  right: 6px;
+  position: relative;
+  top: 10px;
   width: 310px;
   height: 40px;
   border-width: 1px;

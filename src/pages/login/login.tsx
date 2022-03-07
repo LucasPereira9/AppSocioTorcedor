@@ -1,15 +1,7 @@
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
 import {Container, LoginContainer, ButtonContainer} from './style';
-import {
-  View,
-  Image,
-  StyleSheet,
-  Text,
-  TextInput,
-  Alert,
-  Button,
-} from 'react-native';
+import {View, Image, StyleSheet, Text, TextInput, Button} from 'react-native';
 
 const login = ({navigation}: any) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
