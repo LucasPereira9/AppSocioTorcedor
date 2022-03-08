@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   text: {
-    fontSize: 26,
-    fontWeight: 'bold',
+    fontSize: 29,
     color: '#FFFFFF',
+    fontFamily: 'PTSerif-Italic',
   },
 });

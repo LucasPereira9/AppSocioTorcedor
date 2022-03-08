@@ -4,14 +4,13 @@ import React, {useState} from 'react';
 import {Container, LoginContainer} from './style';
 import {View, Image, StyleSheet, Text, TextInput, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {justifyContent} from 'styled-system';
 
 const login = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   function Login() {
-    if (email === 'lucas@teste.com.br' && password === '123456') {
+    if (email === 'lucas@teste.com' && password === '12345678') {
       navigation.navigate('Index');
     } else {
       Alert.alert('Email ou senha incorretos!');
@@ -53,7 +52,7 @@ const login = ({navigation}: any) => {
           onChangeText={value => setPassword(value)}
         />
         <TouchableOpacity style={styles.button} onPress={Login}>
-          <Text style={styles.buttonText}>Entrar</Text>
+          <Text style={styles.buttonText}>ENTRAR</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.accountCreate}
@@ -101,22 +100,23 @@ const styles = StyleSheet.create({
     color: '#000000',
     paddingTop: 30,
     textAlign: 'center',
-    fontFamily: 'Ubuntu-MediumItalic',
+    fontFamily: 'PTSerif-Italic',
   },
   text3: {
     paddingTop: 10,
     fontSize: 22,
     color: '#000',
-    fontFamily: 'Ubuntu-LightItalic',
+    fontFamily: 'PTSerif-Italic',
   },
   input: {
-    width: 235,
+    width: 255,
     height: 50,
     color: '#000',
     backgroundColor: '#fff',
     borderRadius: 6,
     marginTop: 12,
     textAlign: 'center',
+    fontFamily: 'PTSerif-Italic',
   },
   button: {
     width: 230,
@@ -128,21 +128,24 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   buttonText: {
-    fontSize: 26,
+    marginLeft: 13,
+    width: 100,
+    fontSize: 22,
     color: '#fff',
-    fontFamily: 'Ubuntu-LightItali',
+    fontFamily: 'PTSerif-Italic',
   },
   accountCreate: {
     width: 100,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 19,
+    marginTop: 16,
     marginLeft: 6,
   },
   acoountCreateText: {
-    fontSize: 16,
+    fontSize: 17,
     color: '#000',
     borderBottomWidth: 1,
     borderColor: '#ee0000',
+    fontFamily: 'PTSerif-Italic',
   },
 });

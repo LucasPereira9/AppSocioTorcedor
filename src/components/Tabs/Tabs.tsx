@@ -30,7 +30,7 @@ const Tabs = ({translateY}: any) => {
             Alert.alert('Perdão torcedor! Botão em manutenção...')
           }>
           <Icon>
-            <Caretdown name="calendar" size={43} color="#ffffffdf" />
+            <Caretdown name="calendar" size={38} color="#ffffffdf" />
           </Icon>
           <Text style={styles.text}>Calendário</Text>
         </TouchableOpacity>
@@ -55,7 +55,7 @@ const Tabs = ({translateY}: any) => {
             <Text style={styles.text}>3</Text>
           </Notification>
           <Icon>
-            <Caretdown name="refresh-ccw" size={40} color="#ffffffdf" />
+            <Caretdown name="refresh-ccw" size={38} color="#ffffffdf" />
           </Icon>
           <Text style={styles.text2}>Novas Contratações</Text>
         </TouchableOpacity>
@@ -65,7 +65,7 @@ const Tabs = ({translateY}: any) => {
             Alert.alert('Perdão torcedor! Botão em manutenção...')
           }>
           <Icon>
-            <Caretdown name="trending-up" size={40} color="#ffffffdf" />
+            <Caretdown name="trending-up" size={38} color="#ffffffdf" />
           </Icon>
           <Text style={styles.text}>Classificação</Text>
         </TouchableOpacity>
@@ -75,7 +75,7 @@ const Tabs = ({translateY}: any) => {
             Alert.alert('Perdão torcedor! Botão em manutenção...')
           }>
           <Icon>
-            <Caretdown name="percent" size={40} color="#ffffffdf" />
+            <Caretdown name="percent" size={38} color="#ffffffdf" />
           </Icon>
           <Text style={styles.text}>Meus Cupons</Text>
         </TouchableOpacity>
@@ -85,7 +85,7 @@ const Tabs = ({translateY}: any) => {
             Alert.alert('Perdão torcedor! Botão em manutenção...')
           }>
           <Icon>
-            <Caretdown name="shopping-cart" size={40} color="#ffffffdf" />
+            <Caretdown name="shopping-cart" size={38} color="#ffffffdf" />
           </Icon>
           <Text style={styles.text}>Minhas Compras</Text>
         </TouchableOpacity>
@@ -108,17 +108,18 @@ export default Tabs;
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 17,
+    fontSize: 18,
     color: '#000000bc',
-    fontWeight: 'bold',
     textAlign: 'center',
+    fontFamily: 'PTSerif-Italic',
   },
   text2: {
-    fontSize: 17,
-    color: '#000000bc',
-    fontWeight: 'bold',
+    fontSize: 18,
+    color: '#050505bb',
+
     textAlign: 'center',
     marginBottom: 6,
+    fontFamily: 'PTSerif-Italic',
   },
   tabs: {
     width: 120,

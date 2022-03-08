@@ -142,20 +142,23 @@ export default Details;
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 16,
+    fontSize: 17,
     paddingLeft: 10,
     color: '#c5c3c3',
+    fontFamily: 'PTSerif-Italic',
   },
   value: {
-    fontSize: 40,
+    fontSize: 46,
     color: '#FFF',
     paddingLeft: 10,
+    fontFamily: 'PTSerif-Italic',
   },
   text2: {
     color: '#c5c3c3',
-    fontSize: 18,
+    fontSize: 19,
     marginLeft: 10,
     marginTop: 10,
+    fontFamily: 'PTSerif-Italic',
   },
   image: {
     width: 60,
@@ -185,7 +188,7 @@ const styles = StyleSheet.create({
   },
   BuyButtonText: {
     color: '#fff',
-    fontSize: 17,
-    fontFamily: 'Ubuntu-LightItali',
+    fontSize: 18,
+    fontFamily: 'PTSerif-Italic',
   },
 });

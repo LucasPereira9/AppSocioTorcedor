@@ -44,6 +44,10 @@
 		566DA33AB87A436D8B01D3E4 /* Ubuntu-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEBE6C0BD52D4EC69460F015 /* Ubuntu-Medium.ttf */; };
 		9244025C89AE4E0A9EEDEEBB /* Ubuntu-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 000F156012E44620993ED2A7 /* Ubuntu-MediumItalic.ttf */; };
 		FDEB29E2AFEC4CE585B72B1F /* Ubuntu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0E7EA130C147A2B5436EA4 /* Ubuntu-Regular.ttf */; };
+		D39A72F5899243B8B656218B /* PTSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0652FF6C685F48D1A69F9050 /* PTSerif-Bold.ttf */; };
+		1258719A65954042BDABED6F /* PTSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F2AF3F0A01AF4018A39024B6 /* PTSerif-BoldItalic.ttf */; };
+		EB9B2F8A5B4D49B38C2AE4D3 /* PTSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC678C082943EC900F6E7D /* PTSerif-Italic.ttf */; };
+		109528C0CB7240F68697A8FD /* PTSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B22448E5969245BD970DBE79 /* PTSerif-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +108,10 @@
 		EEBE6C0BD52D4EC69460F015 /* Ubuntu-Medium.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Medium.ttf"; path = "../src/assets/fonts/Ubuntu-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		000F156012E44620993ED2A7 /* Ubuntu-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Ubuntu-MediumItalic.ttf"; path = "../src/assets/fonts/Ubuntu-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AF0E7EA130C147A2B5436EA4 /* Ubuntu-Regular.ttf */ = {isa = PBXFileReference; name = "Ubuntu-Regular.ttf"; path = "../src/assets/fonts/Ubuntu-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0652FF6C685F48D1A69F9050 /* PTSerif-Bold.ttf */ = {isa = PBXFileReference; name = "PTSerif-Bold.ttf"; path = "../src/assets/fonts/PTSerif-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F2AF3F0A01AF4018A39024B6 /* PTSerif-BoldItalic.ttf */ = {isa = PBXFileReference; name = "PTSerif-BoldItalic.ttf"; path = "../src/assets/fonts/PTSerif-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9DBC678C082943EC900F6E7D /* PTSerif-Italic.ttf */ = {isa = PBXFileReference; name = "PTSerif-Italic.ttf"; path = "../src/assets/fonts/PTSerif-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B22448E5969245BD970DBE79 /* PTSerif-Regular.ttf */ = {isa = PBXFileReference; name = "PTSerif-Regular.ttf"; path = "../src/assets/fonts/PTSerif-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +251,10 @@
 				EEBE6C0BD52D4EC69460F015 /* Ubuntu-Medium.ttf */,
 				000F156012E44620993ED2A7 /* Ubuntu-MediumItalic.ttf */,
 				AF0E7EA130C147A2B5436EA4 /* Ubuntu-Regular.ttf */,
+				0652FF6C685F48D1A69F9050 /* PTSerif-Bold.ttf */,
+				F2AF3F0A01AF4018A39024B6 /* PTSerif-BoldItalic.ttf */,
+				9DBC678C082943EC900F6E7D /* PTSerif-Italic.ttf */,
+				B22448E5969245BD970DBE79 /* PTSerif-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -374,6 +386,10 @@
 				566DA33AB87A436D8B01D3E4 /* Ubuntu-Medium.ttf in Resources */,
 				9244025C89AE4E0A9EEDEEBB /* Ubuntu-MediumItalic.ttf in Resources */,
 				FDEB29E2AFEC4CE585B72B1F /* Ubuntu-Regular.ttf in Resources */,
+				D39A72F5899243B8B656218B /* PTSerif-Bold.ttf in Resources */,
+				1258719A65954042BDABED6F /* PTSerif-BoldItalic.ttf in Resources */,
+				EB9B2F8A5B4D49B38C2AE4D3 /* PTSerif-Italic.ttf in Resources */,
+				109528C0CB7240F68697A8FD /* PTSerif-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
