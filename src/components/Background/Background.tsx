@@ -9,8 +9,10 @@ import {
 import QRCode from 'react-native-qrcode-svg';
 import {StyleSheet, Text, Button, Alert} from 'react-native';
 import Caretdown from 'react-native-vector-icons/Feather';
+import {useNavigation} from '@react-navigation/native';
 
 const Background = ({translateY}: any) => {
+  const navigation = useNavigation();
   return (
     <Container
       style={{
@@ -43,7 +45,7 @@ const Background = ({translateY}: any) => {
       <ButtonContainer>
         <Button
           title="Trocar de conta"
-          onPress={() => Alert.alert('Perdão torcedor! Botão em manutenção...')}
+          onPress={() => navigation.navigate('Login')}
           color="#024189"
         />
       </ButtonContainer>
