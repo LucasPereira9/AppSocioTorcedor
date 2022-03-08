@@ -6,6 +6,7 @@ import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import io.invertase.firebase.RNFirebasePackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -31,7 +32,9 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           new PlayServicesPackage();
-          // Packages that cannot be autolinked yet can be added manually here, for example:
+          new RNFirebasePackage();
+          new RNFirebaseAuthPackage();
+          // Packages that cannot be autolinked yet can be add ed manually here, for example:
           // packages.add(new MyReactNativePackage());
           return packages;
         }

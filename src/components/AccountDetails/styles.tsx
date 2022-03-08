@@ -33,13 +33,7 @@ export const NextGame = styled.View`
   flex-direction: row;
   align-items: center;
 `;
-export const ButtonContainer = styled.View`
-  width: 140px;
-  height: 290px;
-  margin-left: 190px;
-  padding-top: 11px;
-  margin-top: 15px;
-`;
+
 export const TextContent = styled.View`
   flex-direction: row;
   align-items: center;
