@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "517091919721",
+    "project_id": "app-socio-torcedor",
+    "storage_bucket": "app-socio-torcedor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517091919721:android:ef9cbb9f6886dcdedf1ff8",
+        "android_client_info": {
+          "package_name": "com.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517091919721-lkl3o9pt2ftj0rcjjshn2enovkmss70m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsXZpgKKM0LM6DWo24p6dlK_9ZL0MpQhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517091919721-lkl3o9pt2ftj0rcjjshn2enovkmss70m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
