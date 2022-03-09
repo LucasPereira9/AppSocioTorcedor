@@ -7,11 +7,18 @@ export const Container = styled.View`
 `;
 export const LoginContainer = styled.View`
   flex: 1;
-  width: 300px;
-  height: 415px;
-  background: #ffffffb5;
+  width: 345px;
+  height: 392px;
+  background: #ffffffcf;
   position: absolute;
-  top: 265;
+  top: 248;
   border-radius: 20px;
   align-items: center;
+`;
+
+export const InputContent = styled.View`
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+  text-align: right;
 `;

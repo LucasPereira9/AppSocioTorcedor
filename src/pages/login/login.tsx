@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
-import {Container, LoginContainer} from './style';
+import {Container, LoginContainer, InputContent} from './style';
 import {View, Image, StyleSheet, Text, TextInput, Alert} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
@@ -10,7 +10,7 @@ const login = ({navigation}: any) => {
   const [password, setPassword] = useState('');
 
   function Login() {
-    if (email === 'lucas@teste.com' && password === '12345678') {
+    if (email === 'Lucas@teste.com' && password === '12345678') {
       navigation.navigate('Index');
     } else {
       Alert.alert('Email ou senha incorretos!');
@@ -28,29 +28,32 @@ const login = ({navigation}: any) => {
         style={styles.img2}
         source={require('../../assets/login_image.png')}
       />
-
       <LoginContainer>
         <Text style={styles.text2}>Insira seus dados para efetuar o login</Text>
-        <Text style={styles.text3}>Email</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Insira seu Email cadastrado"
-          value={email}
-          onChangeText={value => setEmail(value)}
-          placeholderTextColor={'#00000092'}
-          returnKeyType={'next'}
-          keyboardType="email-address"
-        />
-        <Text style={styles.text3}>Senha</Text>
-        <TextInput
-          placeholder="Insira sua Senha cadastrada"
-          placeholderTextColor={'#00000092'}
-          style={styles.input}
-          secureTextEntry={true}
-          keyboardType="numeric"
-          value={password}
-          onChangeText={value => setPassword(value)}
-        />
+        <InputContent>
+          <Text style={styles.text3}>Email</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Insira seu Email"
+            value={email}
+            onChangeText={value => setEmail(value)}
+            placeholderTextColor={'#00000050'}
+            returnKeyType={'next'}
+            keyboardType="email-address"
+          />
+        </InputContent>
+        <InputContent>
+          <Text style={styles.text3}>Senha</Text>
+          <TextInput
+            placeholder="Insira sua Senha"
+            placeholderTextColor={'#00000050'}
+            style={styles.input}
+            secureTextEntry={true}
+            keyboardType="numeric"
+            value={password}
+            onChangeText={value => setPassword(value)}
+          />
+        </InputContent>
         <TouchableOpacity style={styles.button} onPress={Login}>
           <Text style={styles.buttonText}>ENTRAR</Text>
         </TouchableOpacity>
@@ -81,7 +84,6 @@ const styles = StyleSheet.create({
     width: 260,
     height: 260,
     position: 'absolute',
-    top: 15,
   },
   text: {
     width: 180,
@@ -94,29 +96,31 @@ const styles = StyleSheet.create({
     fontSize: 40,
     textAlign: 'center',
     borderRadius: 90,
+    fontFamily: 'PTSerif-Italic',
   },
   text2: {
-    fontSize: 28,
+    fontSize: 25,
     color: '#000000',
-    paddingTop: 30,
+    paddingTop: 8,
     textAlign: 'center',
-    fontFamily: 'PTSerif-Italic',
+    fontFamily: 'Poppins-Light',
   },
   text3: {
     paddingTop: 10,
-    fontSize: 22,
-    color: '#000',
-    fontFamily: 'PTSerif-Italic',
+    fontSize: 20,
+    color: '#024189eb',
+    fontFamily: 'Poppins-SemiBold',
+    marginRight: 164,
   },
   input: {
-    width: 255,
+    width: 235,
     height: 50,
-    color: '#000',
     backgroundColor: '#fff',
     borderRadius: 6,
-    marginTop: 12,
-    textAlign: 'center',
-    fontFamily: 'PTSerif-Italic',
+    textAlign: 'left',
+    fontFamily: 'Poppins-Light',
+    borderWidth: 1,
+    borderColor: '#024189f8',
   },
   button: {
     width: 230,
@@ -132,7 +136,7 @@ const styles = StyleSheet.create({
     width: 100,
     fontSize: 22,
     color: '#fff',
-    fontFamily: 'PTSerif-Italic',
+    fontFamily: 'Poppins-Light',
   },
   accountCreate: {
     width: 100,
@@ -146,6 +150,6 @@ const styles = StyleSheet.create({
     color: '#000',
     borderBottomWidth: 1,
     borderColor: '#ee0000',
-    fontFamily: 'PTSerif-Italic',
+    fontFamily: 'Poppins-Light',
   },
 });
