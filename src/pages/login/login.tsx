@@ -10,7 +10,7 @@ const login = ({navigation}: any) => {
   const [password, setPassword] = useState('');
 
   function Login() {
-    if (email === 'Lucas@teste.com' && password === '12345678') {
+    if (email === 'Lucas@gmail.com' && password === '12345678') {
       navigation.navigate('Index');
     } else {
       Alert.alert('Email ou senha incorretos!');
