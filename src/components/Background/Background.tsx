@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: '#ffffff',
     marginLeft: 20,
-    fontFamily: 'Ubuntu-LightItalic',
+    fontFamily: 'Poppins-Light',
   },
   options: {
     width: 320,
@@ -99,6 +99,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 18,
-    fontFamily: 'Ubuntu-LightItalic',
+    fontFamily: 'Poppins-Light',
   },
 });

@@ -106,11 +106,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Light',
   },
   text3: {
+    paddingLeft: 3,
     paddingTop: 10,
     fontSize: 20,
     color: '#024189eb',
     fontFamily: 'Poppins-SemiBold',
-    marginRight: 164,
   },
   input: {
     width: 235,

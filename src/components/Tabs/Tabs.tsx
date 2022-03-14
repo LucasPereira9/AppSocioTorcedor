@@ -108,18 +108,18 @@ export default Tabs;
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 18,
+    fontSize: 15,
     color: '#000000bc',
     textAlign: 'center',
-    fontFamily: 'PTSerif-Italic',
+    fontFamily: 'Poppins-Light',
   },
   text2: {
-    fontSize: 18,
+    fontSize: 15,
     color: '#050505bb',
 
     textAlign: 'center',
     marginBottom: 6,
-    fontFamily: 'PTSerif-Italic',
+    fontFamily: 'Poppins-Light',
   },
   tabs: {
     width: 120,

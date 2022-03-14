@@ -145,20 +145,20 @@ const styles = StyleSheet.create({
     fontSize: 17,
     paddingLeft: 10,
     color: '#c5c3c3',
-    fontFamily: 'PTSerif-Italic',
+    fontFamily: 'Poppins-Light',
   },
   value: {
     fontSize: 46,
     color: '#FFF',
     paddingLeft: 10,
-    fontFamily: 'PTSerif-Italic',
+    fontFamily: 'Poppins-bold',
   },
   text2: {
     color: '#c5c3c3',
-    fontSize: 19,
+    fontSize: 16,
     marginLeft: 10,
     marginTop: 10,
-    fontFamily: 'PTSerif-Italic',
+    fontFamily: 'Poppins-Light',
   },
   image: {
     width: 60,
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   },
   BuyButtonText: {
     color: '#fff',
-    fontSize: 18,
-    fontFamily: 'PTSerif-Italic',
+    fontSize: 15,
+    fontFamily: 'Poppins-Light',
   },
 });

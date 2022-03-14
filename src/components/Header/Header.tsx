@@ -2,7 +2,6 @@ import React from 'react';
 import {Container} from '../../pages/menuInicial/style';
 import {Image, StyleSheet, Text} from 'react-native';
 import {Top} from './style';
-import Caretdown from 'react-native-vector-icons/Feather';
 import Details from '../AccountDetails/Details';
 
 const Header = () => {
@@ -31,6 +30,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 29,
     color: '#FFFFFF',
-    fontFamily: 'PTSerif-Italic',
+    fontFamily: 'Poppins-SemiBold',
   },
 });

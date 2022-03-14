@@ -18,7 +18,5 @@ export const LoginContainer = styled.View`
 
 export const InputContent = styled.View`
   justify-content: space-between;
-  align-items: center;
-  margin-right: 20px;
   text-align: right;
 `;
