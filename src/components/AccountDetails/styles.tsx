@@ -9,7 +9,7 @@ export const Container = styled.View`
 export const DetailContainer = styled.View`
   display: flex;
   width: 350px;
-  height: 330px;
+  height: 340px;
   background: #b41e1e;
   margin: 18px;
   border-radius: 12px;
@@ -33,13 +33,7 @@ export const NextGame = styled.View`
   flex-direction: row;
   align-items: center;
 `;
-export const ButtonContainer = styled.View`
-  width: 140px;
-  height: 290px;
-  margin-left: 190px;
-  padding-top: 11px;
-  margin-top: 15px;
-`;
+
 export const TextContent = styled.View`
   flex-direction: row;
   align-items: center;

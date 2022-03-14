@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Container,
   QRcodeView,
@@ -7,11 +7,13 @@ import {
   Option,
 } from './Styles';
 import QRCode from 'react-native-qrcode-svg';
-import {StyleSheet, Text, Button, Alert} from 'react-native';
+import {StyleSheet, Text, Button, Alert, TouchableOpacity} from 'react-native';
 import Caretdown from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
+import {style} from 'styled-system';
 
 const Background = ({translateY}: any) => {
+  const [isNotificationON, setIsNotificationON] = useState(true);
   const navigation = useNavigation();
   return (
     <Container
@@ -29,26 +31,38 @@ const Background = ({translateY}: any) => {
         />
       </QRcodeView>
       <OptionsContainer>
-        <Option>
+        <TouchableOpacity style={styles.options}>
           <Caretdown name="user" size={22} color="#ffffffdf" />
           <Text style={styles.text}>Dados Cadastrais</Text>
-        </Option>
-        <Option>
-          <Caretdown name="bell-off" size={22} color="#ffffffdf" />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.options}
+          onPress={() => {
+            if (isNotificationON) {
+              setIsNotificationON(false);
+            } else {
+              setIsNotificationON(true);
+            }
+          }}>
+          <Caretdown
+            name={isNotificationON ? 'bell-off' : 'bell'}
+            size={22}
+            color="#ffffffd6"
+          />
           <Text style={styles.text}>Notificações de partidas</Text>
-        </Option>
-        <Option>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.options}>
           <Caretdown name="settings" size={22} color="#ffffffdf" />
           <Text style={styles.text}>Configurações</Text>
-        </Option>
+        </TouchableOpacity>
       </OptionsContainer>
-      <ButtonContainer>
-        <Button
-          title="Trocar de conta"
-          onPress={() => navigation.navigate('Login')}
-          color="#024189"
-        />
-      </ButtonContainer>
+      <TouchableOpacity
+        style={styles.logoutButton}
+        onPress={() => {
+          navigation.navigate('Login');
+        }}>
+        <Text style={styles.buttonText}>Sair da Conta</Text>
+      </TouchableOpacity>
     </Container>
   );
 };
@@ -57,7 +71,34 @@ export default Background;
 
 const styles = StyleSheet.create({
   text: {
+    fontSize: 17,
     color: '#ffffff',
     marginLeft: 20,
+    fontFamily: 'Poppins-Light',
+  },
+  options: {
+    width: 320,
+    height: 40,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    borderBottomWidth: 1,
+    borderColor: '#e908086c',
+    alignItems: 'center',
+  },
+  logoutButton: {
+    position: 'relative',
+    top: 10,
+    width: 310,
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#ff000096',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 4,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontFamily: 'Poppins-Light',
   },
 });

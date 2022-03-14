@@ -69,6 +69,33 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>Cinzel-Black.ttf</string>
+		<string>Cinzel-Bold.ttf</string>
+		<string>Cinzel-ExtraBold.ttf</string>
+		<string>Cinzel-Medium.ttf</string>
+		<string>Cinzel-Regular.ttf</string>
+		<string>Cinzel-SemiBold.ttf</string>
+		<string>Ubuntu-Bold.ttf</string>
+		<string>Ubuntu-BoldItalic.ttf</string>
+		<string>Ubuntu-Italic.ttf</string>
+		<string>Ubuntu-Light.ttf</string>
+		<string>Ubuntu-LightItalic.ttf</string>
+		<string>Ubuntu-Medium.ttf</string>
+		<string>Ubuntu-MediumItalic.ttf</string>
+		<string>Ubuntu-Regular.ttf</string>
+		<string>PTSerif-Bold.ttf</string>
+		<string>PTSerif-BoldItalic.ttf</string>
+		<string>PTSerif-Italic.ttf</string>
+		<string>PTSerif-Regular.ttf</string>
+		<string>Poppins-Light.ttf</string>
+		<string>Poppins-LightItalic.ttf</string>
+		<string>Poppins-Medium.ttf</string>
+		<string>Poppins-MediumItalic.ttf</string>
+		<string>Poppins-Regular.ttf</string>
+		<string>Poppins-SemiBold.ttf</string>
+		<string>Poppins-SemiBoldItalic.ttf</string>
+		<string>Poppins-Thin.ttf</string>
+		<string>Poppins-ThinItalic.ttf</string>
 	</array>
 </dict>
 </plist>

@@ -7,17 +7,16 @@ export const Container = styled.View`
 `;
 export const LoginContainer = styled.View`
   flex: 1;
-  width: 300px;
-  height: 390px;
-  background: #ffffffb5;
+  width: 345px;
+  height: 392px;
+  background: #ffffffcf;
   position: absolute;
-  top: 265;
+  top: 248;
   border-radius: 20px;
   align-items: center;
 `;
-export const ButtonContainer = styled.View`
-  width: 220px;
-  height: 70px;
-  position: absolute;
-  top: 340;
+
+export const InputContent = styled.View`
+  justify-content: space-between;
+  text-align: right;
 `;

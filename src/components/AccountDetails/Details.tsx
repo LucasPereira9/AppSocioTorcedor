@@ -4,7 +4,6 @@ import {
   Icon,
   Content,
   NextGame,
-  ButtonContainer,
   TextContent,
   Container,
 } from './styles';
@@ -13,7 +12,7 @@ import {
   Text,
   StyleSheet,
   Image,
-  Button,
+  TouchableOpacity,
   View,
   Alert,
   Animated,
@@ -89,7 +88,7 @@ const Details = () => {
           <Text style={styles.value}>
             R$
             {isOpenEye ? (
-              '1.387,15'
+              '78,15'
             ) : (
               <View
                 // eslint-disable-next-line react-native/no-inline-styles
@@ -124,15 +123,13 @@ const Details = () => {
                 source={require('../../assets/RealMadri.jpg')}
               />
             </NextGame>
-            <ButtonContainer>
-              <Button
-                title="COMPRAR INGRESSO"
-                onPress={() =>
-                  Alert.alert('Perdão torcedor! Botão em manutenção...')
-                }
-                color="#024189ed"
-              />
-            </ButtonContainer>
+            <TouchableOpacity
+              style={styles.BuyButton}
+              onPress={() =>
+                Alert.alert('Perdão torcedor! Botão em manutenção...')
+              }>
+              <Text style={styles.BuyButtonText}>Comprar Ingresso</Text>
+            </TouchableOpacity>
           </Content>
         </DetailContainer>
       </Animated.View>
@@ -145,20 +142,23 @@ export default Details;
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 16,
+    fontSize: 17,
     paddingLeft: 10,
     color: '#c5c3c3',
+    fontFamily: 'Poppins-Light',
   },
   value: {
-    fontSize: 40,
+    fontSize: 46,
     color: '#FFF',
     paddingLeft: 10,
+    fontFamily: 'Poppins-bold',
   },
   text2: {
     color: '#c5c3c3',
-    fontSize: 18,
+    fontSize: 16,
     marginLeft: 10,
     marginTop: 10,
+    fontFamily: 'Poppins-Light',
   },
   image: {
     width: 60,
@@ -175,5 +175,20 @@ const styles = StyleSheet.create({
   },
   versus: {
     marginLeft: 20,
+  },
+  BuyButton: {
+    width: 160,
+    height: 45,
+    backgroundColor: '#024189f8',
+    marginTop: 25,
+    marginLeft: 174,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+  },
+  BuyButtonText: {
+    color: '#fff',
+    fontSize: 15,
+    fontFamily: 'Poppins-Light',
   },
 });

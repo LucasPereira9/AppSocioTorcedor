@@ -1,11 +1,21 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
-import {Container, LoginContainer, ButtonContainer} from './style';
-import {View, Image, StyleSheet, Text, TextInput, Button} from 'react-native';
+import {Container, LoginContainer, InputContent} from './style';
+import {View, Image, StyleSheet, Text, TextInput, Alert} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const login = ({navigation}: any) => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [text, setText] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  function Login() {
+    if (email === 'Lucas@teste.com' && password === '12345678') {
+      navigation.navigate('Index');
+    } else {
+      Alert.alert('Email ou senha incorretos!');
+    }
+  }
   return (
     <Container>
       <View>
@@ -18,34 +28,45 @@ const login = ({navigation}: any) => {
         style={styles.img2}
         source={require('../../assets/login_image.png')}
       />
-
       <LoginContainer>
         <Text style={styles.text2}>Insira seus dados para efetuar o login</Text>
-        <Text style={styles.text3}>Email</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Insira Seu Email Cadastrado"
-          onChangeText={newText => setText(newText)}
-          defaultValue={text}
-          placeholderTextColor={'#00000092'}
-          returnKeyType={'next'}
-          keyboardType="email-address"
-        />
-        <Text style={styles.text3}>Senha</Text>
-        <TextInput
-          placeholder="Insira sua Senha"
-          placeholderTextColor={'#00000092'}
-          style={styles.input}
-          secureTextEntry={true}
-          keyboardType="numeric"
-        />
-        <ButtonContainer>
-          <Button
-            title="Entrar"
-            onPress={() => navigation.navigate('Index')}
-            color="#024189ed"
+        <InputContent>
+          <Text style={styles.text3}>Email</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Insira seu Email"
+            value={email}
+            onChangeText={value => setEmail(value)}
+            placeholderTextColor={'#00000050'}
+            returnKeyType={'next'}
+            keyboardType="email-address"
           />
-        </ButtonContainer>
+        </InputContent>
+        <InputContent>
+          <Text style={styles.text3}>Senha</Text>
+          <TextInput
+            placeholder="Insira sua Senha"
+            placeholderTextColor={'#00000050'}
+            style={styles.input}
+            secureTextEntry={true}
+            keyboardType="numeric"
+            value={password}
+            onChangeText={value => setPassword(value)}
+          />
+        </InputContent>
+        <TouchableOpacity style={styles.button} onPress={Login}>
+          <Text style={styles.buttonText}>ENTRAR</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.accountCreate}
+          onPress={() => {
+            Alert.alert('Adquira os dados de Login com o Desenvolvedor!');
+            Alert.alert(
+              'App em desenvolvimento. \nnovos cadastros indisponiveis! :(',
+            );
+          }}>
+          <Text style={styles.acoountCreateText}>Criar Conta</Text>
+        </TouchableOpacity>
       </LoginContainer>
     </Container>
   );
@@ -63,7 +84,6 @@ const styles = StyleSheet.create({
     width: 260,
     height: 260,
     position: 'absolute',
-    top: 15,
   },
   text: {
     width: 180,
@@ -76,26 +96,60 @@ const styles = StyleSheet.create({
     fontSize: 40,
     textAlign: 'center',
     borderRadius: 90,
+    fontFamily: 'PTSerif-Italic',
   },
   text2: {
     fontSize: 25,
     color: '#000000',
-    paddingTop: 30,
+    paddingTop: 8,
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Light',
   },
   text3: {
+    paddingLeft: 3,
     paddingTop: 10,
     fontSize: 20,
-    color: '#000',
+    color: '#024189eb',
+    fontFamily: 'Poppins-SemiBold',
   },
   input: {
-    width: 200,
+    width: 235,
     height: 50,
-    color: '#000',
     backgroundColor: '#fff',
     borderRadius: 6,
-    marginTop: 12,
-    textAlign: 'center',
+    textAlign: 'left',
+    fontFamily: 'Poppins-Light',
+    borderWidth: 1,
+    borderColor: '#024189f8',
+  },
+  button: {
+    width: 230,
+    height: 44,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#024189f8',
+    marginTop: 20,
+    borderRadius: 4,
+  },
+  buttonText: {
+    marginLeft: 13,
+    width: 100,
+    fontSize: 22,
+    color: '#fff',
+    fontFamily: 'Poppins-Light',
+  },
+  accountCreate: {
+    width: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 16,
+    marginLeft: 6,
+  },
+  acoountCreateText: {
+    fontSize: 17,
+    color: '#000',
+    borderBottomWidth: 1,
+    borderColor: '#ee0000',
+    fontFamily: 'Poppins-Light',
   },
 });
