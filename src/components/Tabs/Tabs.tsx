@@ -23,7 +23,7 @@ const Tabs = ({translateY}: any) => {
           extrapolate: 'clamp',
         }),
       }}>
-      <ScrollView horizontal={true}>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <TouchableOpacity
           style={styles.tabs}
           onPress={() =>

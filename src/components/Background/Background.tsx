@@ -1,16 +1,9 @@
 import React, {useState} from 'react';
-import {
-  Container,
-  QRcodeView,
-  OptionsContainer,
-  ButtonContainer,
-  Option,
-} from './Styles';
+import {Container, QRcodeView, OptionsContainer} from './Styles';
 import QRCode from 'react-native-qrcode-svg';
-import {StyleSheet, Text, Button, Alert, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Caretdown from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
-import {style} from 'styled-system';
 
 const Background = ({translateY}: any) => {
   const [isNotificationON, setIsNotificationON] = useState(true);

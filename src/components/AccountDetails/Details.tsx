@@ -76,11 +76,7 @@ const Details = () => {
               size={38}
               color="#ffffffd6"
               onPress={() => {
-                if (isOpenEye) {
-                  setIsOpenEye(false);
-                } else {
-                  setIsOpenEye(true);
-                }
+                setIsOpenEye(!isOpenEye);
               }}
             />
           </Icon>

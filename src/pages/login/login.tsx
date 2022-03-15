@@ -12,6 +12,8 @@ const login = ({navigation}: any) => {
   function Login() {
     if (email === 'Lucas@gmail.com' && password === '12345678') {
       navigation.navigate('Index');
+      setEmail('');
+      setPassword('');
     } else {
       Alert.alert('Email ou senha incorretos!');
     }
