@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     zIndex: -22,
   },
   img2: {
+    paddingTop: 50,
     width: 260,
     height: 260,
     position: 'absolute',
