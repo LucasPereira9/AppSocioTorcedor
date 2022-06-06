@@ -2,15 +2,26 @@
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
 import {Container, LoginContainer, InputContent} from './style';
-import {View, Image, StyleSheet, Text, TextInput, Alert} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {
+  View,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  Alert,
+  Keyboard,
+} from 'react-native';
+import {
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from 'react-native-gesture-handler';
 
 const login = ({navigation}: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   function Login() {
-    if (email === 'Lucas@gmail.com' && password === '12345678') {
+    if (email === '' && password === '') {
       navigation.navigate('Index');
       setEmail('');
       setPassword('');
@@ -20,56 +31,57 @@ const login = ({navigation}: any) => {
   }
   return (
     <Container>
-      <View>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={styles.view}>
+          <Image
+            style={styles.img}
+            source={require('../../assets/Camp-Nou.jpg')}
+          />
+        </View>
         <Image
-          style={styles.img}
-          source={require('../../assets/Camp-Nou.jpg')}
+          style={styles.img2}
+          source={require('../../assets/login_image.png')}
         />
-      </View>
-      <Image
-        style={styles.img2}
-        source={require('../../assets/login_image.png')}
-      />
-      <LoginContainer>
-        <Text style={styles.text2}>Insira seus dados para efetuar o login</Text>
-        <InputContent>
-          <Text style={styles.text3}>Email</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Insira seu Email"
-            value={email}
-            onChangeText={value => setEmail(value)}
-            placeholderTextColor={'#00000050'}
-            returnKeyType={'next'}
-            keyboardType="email-address"
-          />
-        </InputContent>
-        <InputContent>
-          <Text style={styles.text3}>Senha</Text>
-          <TextInput
-            placeholder="Insira sua Senha"
-            placeholderTextColor={'#00000050'}
-            style={styles.input}
-            secureTextEntry={true}
-            keyboardType="numeric"
-            value={password}
-            onChangeText={value => setPassword(value)}
-          />
-        </InputContent>
-        <TouchableOpacity style={styles.button} onPress={Login}>
-          <Text style={styles.buttonText}>ENTRAR</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.accountCreate}
-          onPress={() => {
-            Alert.alert('Adquira os dados de Login com o Desenvolvedor!');
-            Alert.alert(
-              'App em desenvolvimento. \nnovos cadastros indisponiveis! :(',
-            );
-          }}>
-          <Text style={styles.acoountCreateText}>Criar Conta</Text>
-        </TouchableOpacity>
-      </LoginContainer>
+        <LoginContainer>
+          <InputContent>
+            <Text style={styles.text3}>Email</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Insira seu Email"
+              value={email}
+              onChangeText={value => setEmail(value)}
+              placeholderTextColor={'#00000050'}
+              returnKeyType={'next'}
+              keyboardType="email-address"
+            />
+          </InputContent>
+          <InputContent>
+            <Text style={styles.text3}>Senha</Text>
+            <TextInput
+              placeholder="Insira sua Senha"
+              placeholderTextColor={'#00000050'}
+              style={styles.input}
+              secureTextEntry={true}
+              keyboardType="numeric"
+              value={password}
+              onChangeText={value => setPassword(value)}
+            />
+          </InputContent>
+          <TouchableOpacity style={styles.button} onPress={Login}>
+            <Text style={styles.buttonText}>ENTRAR</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.accountCreate}
+            onPress={() => {
+              Alert.alert('Adquira os dados de Login com o Desenvolvedor!');
+              Alert.alert(
+                'App em desenvolvimento. \nnovos cadastros indisponiveis! :(',
+              );
+            }}>
+            <Text style={styles.acoountCreateText}>Criar Conta</Text>
+          </TouchableOpacity>
+        </LoginContainer>
+      </TouchableWithoutFeedback>
     </Container>
   );
 };
@@ -82,8 +94,12 @@ const styles = StyleSheet.create({
     left: 25,
     zIndex: -22,
   },
+  view: {
+    flex: 1,
+  },
   img2: {
-    paddingTop: 50,
+    top: '9%',
+    left: '32%',
     width: 260,
     height: 260,
     position: 'absolute',

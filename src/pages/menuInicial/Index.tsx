@@ -6,7 +6,7 @@ import {StatusBar} from 'native-base';
 const Index = () => {
   return (
     <Container>
-      <StatusBar barStyle="light-content" backgroundColor={'#0b3692'} />
+      <StatusBar barStyle="light-content" backgroundColor={'#024189'} />
       <Header />
     </Container>
   );
