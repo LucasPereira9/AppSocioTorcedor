@@ -75,10 +75,7 @@ const login = () => {
           <TouchableOpacity
             style={styles.accountCreate}
             onPress={() => {
-              Alert.alert('Adquira os dados de Login com o Desenvolvedor!');
-              Alert.alert(
-                'App em desenvolvimento. \nnovos cadastros indisponiveis! :(',
-              );
+              navigation.navigate('Cadastrar');
             }}>
             <Text style={styles.acoountCreateText}>Criar Conta</Text>
           </TouchableOpacity>
