@@ -15,8 +15,10 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
-const login = ({navigation}: any) => {
+const login = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
