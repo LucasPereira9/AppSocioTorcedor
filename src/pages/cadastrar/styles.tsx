@@ -8,11 +8,11 @@ export const Container = styled.View`
 export const LoginContainer = styled.View`
   flex: 1;
   width: 80%;
-  height: 60%;
+  height: 65%;
   elevation: 180;
-  background: #ffffffd5;
+  background: #ffffffb3;
   position: absolute;
-  top: 33%;
+  top: 30%;
   border-radius: 20px;
   align-items: center;
   justify-content: center;
