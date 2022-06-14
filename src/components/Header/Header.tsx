@@ -23,9 +23,9 @@ export default Header;
 
 const styles = StyleSheet.create({
   imagem: {
-    width: 115,
-    height: 115,
-    right: '4%',
+    width: 130,
+    height: 107,
+    right: '5%',
   },
   text: {
     fontSize: 29,

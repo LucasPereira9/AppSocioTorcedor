@@ -5,7 +5,7 @@ export const Container = styled(Animated.View)`
   justify-content: space-between;
   flex-direction: row;
   z-index: -1;
-  margin-top: 28px;
+  margin-top: 1%;
 `;
 
 export const TabsContainer = styled(Animated.View)`

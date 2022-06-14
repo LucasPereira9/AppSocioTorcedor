@@ -39,9 +39,6 @@ const login = () => {
         if (error.code === 'auth/invalid-email') {
           setToastMessage('email inválido');
         }
-        if (String(email) === '' || null) {
-          setToastMessage('preencha os campos');
-        }
 
         console.error(error);
       });
