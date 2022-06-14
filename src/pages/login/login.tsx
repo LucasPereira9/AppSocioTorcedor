@@ -71,6 +71,7 @@ const login = () => {
               placeholderTextColor={'#00000050'}
               returnKeyType={'next'}
               keyboardType="email-address"
+              autoCapitalize="none"
             />
           </InputContent>
           <InputContent>
