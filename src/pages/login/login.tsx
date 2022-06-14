@@ -8,29 +8,45 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  Alert,
   Keyboard,
+  ToastAndroid,
 } from 'react-native';
 import {
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
 
 const login = () => {
+  const setToastMessage = (msg: string) => {
+    ToastAndroid.showWithGravity(msg, ToastAndroid.LONG, ToastAndroid.BOTTOM);
+  };
+
+  function Logar() {
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        navigation.navigate('Home');
+        setEmail('');
+        setPassword('');
+      })
+      .catch(error => {
+        if (error.code === 'auth/invalid-email' || 'auth/wrong-password') {
+          setToastMessage('credenciais inválidas');
+        }
+
+        if (error.code === 'auth/invalid-email') {
+          setToastMessage('email inválido');
+        }
+
+        console.error(error);
+      });
+  }
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function Login() {
-    if (email === '' && password === '') {
-      navigation.navigate('Index');
-      setEmail('');
-      setPassword('');
-    } else {
-      Alert.alert('Email ou senha incorretos!');
-    }
-  }
   return (
     <Container>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -51,7 +67,7 @@ const login = () => {
               style={styles.input}
               placeholder="Insira seu Email"
               value={email}
-              onChangeText={value => setEmail(value)}
+              onChangeText={string => setEmail(string)}
               placeholderTextColor={'#00000050'}
               returnKeyType={'next'}
               keyboardType="email-address"
@@ -66,19 +82,18 @@ const login = () => {
               secureTextEntry={true}
               keyboardType="numeric"
               value={password}
-              onChangeText={value => setPassword(value)}
+              onChangeText={value =>
+                setPassword(value.replace(/([^\d\s/-])/g, ''))
+              }
             />
           </InputContent>
-          <TouchableOpacity style={styles.button} onPress={Login}>
+          <TouchableOpacity style={styles.button} onPress={Logar}>
             <Text style={styles.buttonText}>ENTRAR</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.accountCreate}
             onPress={() => {
-              Alert.alert('Adquira os dados de Login com o Desenvolvedor!');
-              Alert.alert(
-                'App em desenvolvimento. \nnovos cadastros indisponiveis! :(',
-              );
+              navigation.navigate('Cadastrar');
             }}>
             <Text style={styles.acoountCreateText}>Criar Conta</Text>
           </TouchableOpacity>

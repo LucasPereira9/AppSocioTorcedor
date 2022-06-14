@@ -1,10 +1,11 @@
-import React from 'react';
-import {Container} from '../../pages/menuInicial/style';
+import React, {useState} from 'react';
+import {Container} from '../../pages/home/style';
 import {Image, StyleSheet, Text} from 'react-native';
 import {Top} from './style';
 import Details from '../AccountDetails/Details';
 
 const Header = () => {
+  const [name, setName] = useState('');
   return (
     <Container>
       <Top>
@@ -12,7 +13,6 @@ const Header = () => {
           style={styles.imagem}
           source={require('../../assets/Barcelona.jpg')}
         />
-        <Text style={styles.text}>OLÁ, LUCAS</Text>
       </Top>
       <Details />
     </Container>
@@ -23,9 +23,9 @@ export default Header;
 
 const styles = StyleSheet.create({
   imagem: {
-    width: 95,
-    height: 95,
-    borderRadius: 50,
+    width: 130,
+    height: 107,
+    right: '5%',
   },
   text: {
     fontSize: 29,
