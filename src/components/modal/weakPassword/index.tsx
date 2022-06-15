@@ -1,16 +1,16 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const InvalidEmailModal = () => {
+const InvalidCredencialsModal = () => {
   return (
     <View style={styles.modal}>
       <View style={styles.indicator} />
-      <Text style={styles.text}>o Tipo de email digitado é inválido!</Text>
+      <Text style={styles.text}>A senha deve ter no mínimo 6 caracteres!</Text>
       <Text />
     </View>
   );
 };
-export default InvalidEmailModal;
+export default InvalidCredencialsModal;
 
 const styles = StyleSheet.create({
   modal: {
