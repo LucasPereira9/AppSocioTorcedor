@@ -2,7 +2,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
-import {Container, LoginContainer, InputContent} from './style';
+import {
+  Container,
+  LoginContainer,
+  InputContent,
+  ContainerBottom,
+} from './style';
 import {
   View,
   Image,
@@ -12,6 +17,7 @@ import {
   Keyboard,
   Pressable,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import {
   TouchableOpacity,
@@ -19,10 +25,38 @@ import {
 } from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
-import ModalContent from '../../components/modal/invalidCredentials';
 import Modal from 'react-native-modal';
+import ModalContent from '../../components/modal/invalidCredentials';
+import ModalInvalidEmail from '../../components/modal/invalidEmail';
+import ModalNewPassword from '../../components/modal/resetPassword';
+import ModalUser from '../../components/modal/userNotFound';
 
 const login = () => {
+  const navigation = useNavigation();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVisible2, setModalVisible2] = useState(false);
+  const [isModalVisible3, setModalVisible3] = useState(false);
+  const [isModalVisible4, setModalVisible4] = useState(false);
+
+  const isEmpty = email === '' || password === '';
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+  const toggleModal2 = () => {
+    setModalVisible2(!isModalVisible2);
+  };
+  const toggleModal3 = () => {
+    setModalVisible3(!isModalVisible3);
+  };
+  const toggleModal4 = () => {
+    setModalVisible4(!isModalVisible4);
+  };
+
   function Logar() {
     setIsLoading(true);
     auth()
@@ -42,17 +76,28 @@ const login = () => {
         console.error(error);
       });
   }
-  const navigation = useNavigation();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
 
-  const [isModalVisible, setModalVisible] = useState(false);
-  const isEmpty = email === '' || password === '';
+  function handleForgotPassword() {
+    if (email === '') {
+      setModalVisible3(true);
+    } else {
+      auth()
+        .sendPasswordResetEmail(email)
+        .then(() => {
+          setModalVisible2(true);
+        })
+        .catch(error => {
+          if (error.code === 'auth/invalid-email') {
+            setModalVisible3(true);
+          }
+          if (error.code === 'auth/user-not-found') {
+            setModalVisible4(true);
+          }
 
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
+          console.error(error);
+        });
+    }
+  }
 
   return (
     <Container>
@@ -108,18 +153,25 @@ const login = () => {
               )}
             </TouchableOpacity>
           )}
-
-          <TouchableOpacity
-            style={styles.accountCreate}
-            onPress={() => {
-              navigation.navigate('Cadastrar');
-              setEmail('');
-              setPassword('');
-            }}>
-            <Text style={styles.acoountCreateText}>Criar Conta</Text>
-          </TouchableOpacity>
+          <ContainerBottom>
+            <TouchableOpacity
+              style={[styles.accountCreate, {width: 140, right: 16}]}
+              onPress={handleForgotPassword}>
+              <Text style={styles.acoountCreateText}>Esqueci a Senha</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.accountCreate}
+              onPress={() => {
+                navigation.navigate('Cadastrar');
+                setEmail('');
+                setPassword('');
+              }}>
+              <Text style={styles.acoountCreateText}>Criar Conta</Text>
+            </TouchableOpacity>
+          </ContainerBottom>
         </LoginContainer>
       </TouchableWithoutFeedback>
+
       <Modal
         isVisible={isModalVisible}
         onBackdropPress={() => setModalVisible(false)}
@@ -135,6 +187,78 @@ const login = () => {
             <Text
               style={{
                 fontFamily: 'PTSerif-Italic',
+                alignSelf: 'center',
+                color: '#fff',
+              }}>
+              OK
+            </Text>
+          </Pressable>
+        </View>
+      </Modal>
+
+      <Modal
+        isVisible={isModalVisible2}
+        onBackdropPress={() => setModalVisible2(false)}
+        animationIn={'zoomInDown'}
+        animationOut={'zoomOutUp'}
+        animationInTiming={1000}
+        animationOutTiming={800}
+        backdropTransitionInTiming={1000}
+        backdropTransitionOutTiming={1100}>
+        <ModalNewPassword />
+        <View style={[styles.hideModalButton, {backgroundColor: '#024189dd'}]}>
+          <Pressable style={{width: '100%'}} onPress={toggleModal2}>
+            <Text
+              style={{
+                fontFamily: 'PTSerif-Italic',
+                alignSelf: 'center',
+                color: '#fff',
+              }}>
+              OK
+            </Text>
+          </Pressable>
+        </View>
+      </Modal>
+
+      <Modal
+        isVisible={isModalVisible3}
+        onBackdropPress={() => setModalVisible3(false)}
+        animationIn={'zoomInDown'}
+        animationOut={'zoomOutUp'}
+        animationInTiming={1000}
+        animationOutTiming={800}
+        backdropTransitionInTiming={1000}
+        backdropTransitionOutTiming={1100}>
+        <ModalInvalidEmail />
+        <View style={styles.hideModalButton}>
+          <Pressable style={{width: '100%'}} onPress={toggleModal3}>
+            <Text
+              style={{
+                fontFamily: 'PTSerif-Italic',
+                alignSelf: 'center',
+                color: '#fff',
+              }}>
+              OK
+            </Text>
+          </Pressable>
+        </View>
+      </Modal>
+
+      <Modal
+        isVisible={isModalVisible4}
+        onBackdropPress={() => setModalVisible4(false)}
+        animationIn={'zoomInDown'}
+        animationOut={'zoomOutUp'}
+        animationInTiming={1000}
+        animationOutTiming={800}
+        backdropTransitionInTiming={1000}
+        backdropTransitionOutTiming={1100}>
+        <ModalUser />
+        <View style={styles.hideModalButton}>
+          <Pressable style={{width: '100%'}} onPress={toggleModal4}>
+            <Text
+              style={{
+                fontFamily: 'Poppins-SemiBold',
                 alignSelf: 'center',
                 color: '#fff',
               }}>

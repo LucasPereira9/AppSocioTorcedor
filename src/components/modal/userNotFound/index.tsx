@@ -1,16 +1,18 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import Caretdown from 'react-native-vector-icons/Feather';
 
-const InvalidCredencialsModal = () => {
+const UserNotFoundModal = () => {
   return (
     <View style={styles.modal}>
       <View style={styles.indicator} />
-      <Text style={styles.text}>Email Já cadastrado!</Text>
+      <Text style={styles.text}>Usuário não encontrado!</Text>
+      <Caretdown name="email" size={22} color="#ffffffdf" />
       <Text />
     </View>
   );
 };
-export default InvalidCredencialsModal;
+export default UserNotFoundModal;
 
 const styles = StyleSheet.create({
   modal: {

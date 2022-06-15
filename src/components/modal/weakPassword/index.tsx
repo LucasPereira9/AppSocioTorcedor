@@ -36,5 +36,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     textAlign: 'center',
     color: '#d10d0d',
+    fontFamily: 'Poppins-SemiBold',
   },
 });

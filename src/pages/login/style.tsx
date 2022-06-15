@@ -22,3 +22,6 @@ export const InputContent = styled.View`
   justify-content: space-between;
   text-align: right;
 `;
+export const ContainerBottom = styled.View`
+  flex-direction: row;
+`;

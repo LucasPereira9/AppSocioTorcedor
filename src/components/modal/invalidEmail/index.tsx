@@ -5,7 +5,7 @@ const InvalidEmailModal = () => {
   return (
     <View style={styles.modal}>
       <View style={styles.indicator} />
-      <Text style={styles.text}>o Tipo de email digitado é inválido!</Text>
+      <Text style={styles.text}>o email digitado é inválido!</Text>
       <Text />
     </View>
   );
@@ -36,5 +36,6 @@ const styles = StyleSheet.create({
     marginTop: 50,
     textAlign: 'center',
     color: '#d10d0d',
+    fontFamily: 'Poppins-SemiBold',
   },
 });

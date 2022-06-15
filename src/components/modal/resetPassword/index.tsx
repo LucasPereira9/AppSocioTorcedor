@@ -1,16 +1,20 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import Caretdown from 'react-native-vector-icons/Feather';
 
-const InvalidCredencialsModal = () => {
+const EmailSendedModal = () => {
   return (
     <View style={styles.modal}>
       <View style={styles.indicator} />
-      <Text style={styles.text}>Email Já cadastrado!</Text>
+      <Text style={styles.text}>
+        Prontinho! Enviamos um email para que voce possa redefinir sua senha!
+      </Text>
+      <Caretdown name="email" size={22} color="#ffffffdf" />
       <Text />
     </View>
   );
 };
-export default InvalidCredencialsModal;
+export default EmailSendedModal;
 
 const styles = StyleSheet.create({
   modal: {
@@ -35,7 +39,7 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 50,
     textAlign: 'center',
-    color: '#d10d0d',
+    color: '#024189eb',
     fontFamily: 'Poppins-SemiBold',
   },
 });
