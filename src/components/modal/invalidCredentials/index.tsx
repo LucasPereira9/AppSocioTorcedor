@@ -1,24 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import modal from 'react-native-modal';
+import {View, Text, StyleSheet} from 'react-native';
 
-const ModalTeste = () => {
+const InvalidCredencialsModal = () => {
   return (
     <View style={styles.modal}>
       <View style={styles.indicator} />
-      <Text style={styles.text}>teste</Text>
-      <TouchableOpacity>
-        <Text style={styles.btn}>fechar</Text>
-      </TouchableOpacity>
+      <Text style={styles.text}>Email ou senha incorretos!</Text>
+      <Text />
     </View>
   );
 };
-export default ModalTeste;
+export default InvalidCredencialsModal;
 
 const styles = StyleSheet.create({
   modal: {
+    bottom: -20,
     position: 'absolute',
-    height: '50%',
+    height: '30%',
     backgroundColor: '#fff',
     width: '100%',
     borderTopLeftRadius: 20,
@@ -27,7 +25,7 @@ const styles = StyleSheet.create({
     paddingRight: 25,
   },
   indicator: {
-    width: 50,
+    width: 70,
     height: 5,
     backgroundColor: '#ccc',
     borderRadius: 50,
@@ -37,14 +35,6 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 50,
     textAlign: 'center',
-  },
-  btn: {
-    width: '100%',
-    height: 50,
-    borderRadius: 10,
-    backgroundColor: '#9b59b6',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 30,
+    color: '#d10d0d',
   },
 });

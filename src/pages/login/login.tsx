@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react-hooks/rules-of-hooks */
 import 'react-native-gesture-handler';
 import React, {useState} from 'react';
@@ -9,8 +10,7 @@ import {
   Text,
   TextInput,
   Keyboard,
-  ToastAndroid,
-  Button,
+  Pressable,
   ActivityIndicator,
 } from 'react-native';
 import {
@@ -19,14 +19,10 @@ import {
 } from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
-import ModalTeste from '../../components/modal/teste';
+import ModalContent from '../../components/modal/invalidCredentials';
 import Modal from 'react-native-modal';
 
 const login = () => {
-  const setToastMessage = (msg: string) => {
-    ToastAndroid.showWithGravity(msg, ToastAndroid.LONG, ToastAndroid.BOTTOM);
-  };
-
   function Logar() {
     setIsLoading(true);
     auth()
@@ -124,9 +120,28 @@ const login = () => {
           </TouchableOpacity>
         </LoginContainer>
       </TouchableWithoutFeedback>
-      <Modal isVisible={isModalVisible}>
-        <ModalTeste />
-        <Button title="Hide modal" onPress={toggleModal} />
+      <Modal
+        isVisible={isModalVisible}
+        onBackdropPress={() => setModalVisible(false)}
+        animationIn={'zoomInDown'}
+        animationOut={'zoomOutUp'}
+        animationInTiming={1000}
+        animationOutTiming={800}
+        backdropTransitionInTiming={1000}
+        backdropTransitionOutTiming={1100}>
+        <ModalContent />
+        <View style={styles.hideModalButton}>
+          <Pressable style={{width: '100%'}} onPress={toggleModal}>
+            <Text
+              style={{
+                fontFamily: 'PTSerif-Italic',
+                alignSelf: 'center',
+                color: '#fff',
+              }}>
+              OK
+            </Text>
+          </Pressable>
+        </View>
       </Modal>
     </Container>
   );
@@ -225,5 +240,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#94989cf8',
     marginTop: 20,
     borderRadius: 4,
+  },
+  hideModalButton: {
+    width: '40%',
+    height: 50,
+    borderRadius: 10,
+    backgroundColor: '#e02107dd',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    top: 300,
   },
 });
