@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {StatusBar} from 'native-base';
 import React, {useState} from 'react';
 import {
-  Alert,
+  ActivityIndicator,
   Image,
   Keyboard,
   StyleSheet,
@@ -19,11 +19,14 @@ import {Container, InputContent, LoginContainer} from './styles';
 import auth from '@react-native-firebase/auth';
 
 export const Cadastrar = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigation();
   const setToastMessage = (msg: string) => {
     ToastAndroid.showWithGravity(msg, ToastAndroid.LONG, ToastAndroid.BOTTOM);
   };
+
   function SignUp() {
+    setIsLoading(true);
     auth()
       .createUserWithEmailAndPassword(email, password)
       .then(userCredential => {
@@ -35,13 +38,16 @@ export const Cadastrar = () => {
       .catch(error => {
         if (error.code === 'auth/email-already-in-use') {
           setToastMessage('email já cadastrado');
+          setIsLoading(false);
         }
 
         if (error.code === 'auth/invalid-email') {
           setToastMessage('email inválido');
+          setIsLoading(false);
         }
         if (error.code === 'auth/weak-password') {
           setToastMessage('A senha deve ter no mínimo 6 caracteres');
+          setIsLoading(false);
         }
 
         console.error(error);
@@ -51,6 +57,8 @@ export const Cadastrar = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const isEmpty = email === '' || password === '' || name === '';
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <Container>
@@ -68,7 +76,7 @@ export const Cadastrar = () => {
         <LoginContainer>
           <Text style={styles.text}>Criar Conta</Text>
           <InputContent>
-            <Text style={styles.text2}>Nome(opcional)</Text>
+            <Text style={styles.text2}>Nome</Text>
             <TextInput
               style={styles.input}
               placeholder="Insira seu nome"
@@ -106,9 +114,20 @@ export const Cadastrar = () => {
               }
             />
           </InputContent>
-          <TouchableOpacity onPress={SignUp} style={styles.button}>
-            <Text style={styles.buttonText}>Cadastrar</Text>
-          </TouchableOpacity>
+          {isEmpty ? (
+            <View style={styles.empty}>
+              <Text style={styles.buttonText}>Cadastrar</Text>
+            </View>
+          ) : (
+            <TouchableOpacity onPress={SignUp} style={styles.button}>
+              {isLoading ? (
+                <ActivityIndicator size="large" color="#ffffff" />
+              ) : (
+                <Text style={styles.buttonText}>Cadastrar</Text>
+              )}
+            </TouchableOpacity>
+          )}
+
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('Login');
@@ -188,5 +207,14 @@ const styles = StyleSheet.create({
     fontSize: 19,
     color: '#fff',
     fontFamily: 'Poppins-Light',
+  },
+  empty: {
+    width: 230,
+    height: 44,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#94989cf8',
+    marginTop: 20,
+    borderRadius: 4,
   },
 });

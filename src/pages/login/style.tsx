@@ -6,7 +6,6 @@ export const Container = styled.View`
   align-items: center;
 `;
 export const LoginContainer = styled.View`
-  flex: 1;
   width: 345px;
   height: 322px;
   background: #ffffffcf;

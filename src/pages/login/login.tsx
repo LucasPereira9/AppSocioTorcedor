@@ -10,6 +10,8 @@ import {
   TextInput,
   Keyboard,
   ToastAndroid,
+  Button,
+  ActivityIndicator,
 } from 'react-native';
 import {
   TouchableOpacity,
@@ -17,6 +19,8 @@ import {
 } from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
+import ModalTeste from '../../components/modal/teste';
+import Modal from 'react-native-modal';
 
 const login = () => {
   const setToastMessage = (msg: string) => {
@@ -24,20 +28,19 @@ const login = () => {
   };
 
   function Logar() {
+    setIsLoading(true);
     auth()
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         navigation.navigate('Home');
         setEmail('');
         setPassword('');
+        setIsLoading(false);
       })
       .catch(error => {
         if (error.code === 'auth/invalid-email' || 'auth/wrong-password') {
-          setToastMessage('credenciais inválidas');
-        }
-
-        if (error.code === 'auth/invalid-email') {
-          setToastMessage('email inválido');
+          setIsLoading(false);
+          setModalVisible(true);
         }
 
         console.error(error);
@@ -46,6 +49,14 @@ const login = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [isModalVisible, setModalVisible] = useState(false);
+  const isEmpty = email === '' || password === '';
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
 
   return (
     <Container>
@@ -88,18 +99,35 @@ const login = () => {
               }
             />
           </InputContent>
-          <TouchableOpacity style={styles.button} onPress={Logar}>
-            <Text style={styles.buttonText}>ENTRAR</Text>
-          </TouchableOpacity>
+          {isEmpty ? (
+            <View style={styles.empty}>
+              <Text style={styles.buttonText}>Entrar</Text>
+            </View>
+          ) : (
+            <TouchableOpacity style={styles.button} onPress={Logar}>
+              {isLoading ? (
+                <ActivityIndicator size="large" color="#ffffff" />
+              ) : (
+                <Text style={styles.buttonText}>Entrar</Text>
+              )}
+            </TouchableOpacity>
+          )}
+
           <TouchableOpacity
             style={styles.accountCreate}
             onPress={() => {
               navigation.navigate('Cadastrar');
+              setEmail('');
+              setPassword('');
             }}>
             <Text style={styles.acoountCreateText}>Criar Conta</Text>
           </TouchableOpacity>
         </LoginContainer>
       </TouchableWithoutFeedback>
+      <Modal isVisible={isModalVisible}>
+        <ModalTeste />
+        <Button title="Hide modal" onPress={toggleModal} />
+      </Modal>
     </Container>
   );
 };
@@ -169,7 +197,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   buttonText: {
-    marginLeft: 13,
+    marginLeft: 36,
     width: 100,
     fontSize: 22,
     color: '#fff',
@@ -188,5 +216,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#ee0000',
     fontFamily: 'Poppins-Light',
+  },
+  empty: {
+    width: 230,
+    height: 44,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#94989cf8',
+    marginTop: 20,
+    borderRadius: 4,
   },
 });
