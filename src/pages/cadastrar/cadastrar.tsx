@@ -14,6 +14,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
+  Alert,
 } from 'react-native';
 import {Container, InputContent, LoginContainer} from './styles';
 import auth from '@react-native-firebase/auth';
@@ -21,18 +22,43 @@ import Modal from 'react-native-modal';
 import ModalEmail from '../../components/modal/invalidEmail';
 import ModalEmailInUse from '../../components/modal/emailAlreadyRegistered';
 import ModalPassword from '../../components/modal/weakPassword';
+import ModalNewUser from '../../components/modal/registeredUser';
 
 export const Cadastrar = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigation();
 
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const isEmpty = email === '' || password === '';
+
+  const [isModalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+  const [isModalVisible2, setModalVisible2] = useState(false);
+  const toggleModal2 = () => {
+    setModalVisible2(!isModalVisible2);
+  };
+  const [isModalVisible3, setModalVisible3] = useState(false);
+  const toggleModal3 = () => {
+    setModalVisible3(!isModalVisible3);
+  };
+  const [isModalVisible4, setModalVisible4] = useState(false);
+  const toggleModal4 = () => {
+    setModalVisible4(!isModalVisible4);
+  };
+
   function SignUp() {
     setIsLoading(true);
+
     auth()
       .createUserWithEmailAndPassword(email, password)
       .then(userCredential => {
         console.log('user', userCredential, 'aqui o nome', name);
         navigation.navigate('Login');
+        setModalVisible4(true);
         setEmail('');
         setPassword('');
       })
@@ -54,24 +80,6 @@ export const Cadastrar = () => {
         console.error(error);
       });
   }
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const isEmpty = email === '' || password === '';
-
-  const [isModalVisible, setModalVisible] = useState(false);
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
-  const [isModalVisible2, setModalVisible2] = useState(false);
-  const toggleModal2 = () => {
-    setModalVisible2(!isModalVisible2);
-  };
-  const [isModalVisible3, setModalVisible3] = useState(false);
-  const toggleModal3 = () => {
-    setModalVisible3(!isModalVisible3);
-  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -223,6 +231,31 @@ export const Cadastrar = () => {
           <ModalEmailInUse />
           <View style={styles.hideModalButton}>
             <Pressable style={{width: '100%'}} onPress={toggleModal2}>
+              <Text
+                style={{
+                  fontFamily: 'PTSerif-Italic',
+                  alignSelf: 'center',
+                  color: '#fff',
+                }}>
+                OK
+              </Text>
+            </Pressable>
+          </View>
+        </Modal>
+
+        <Modal
+          isVisible={isModalVisible4}
+          onBackdropPress={() => setModalVisible4(false)}
+          animationIn={'zoomInDown'}
+          animationOut={'zoomOutUp'}
+          animationInTiming={1000}
+          animationOutTiming={800}
+          backdropTransitionInTiming={1000}
+          backdropTransitionOutTiming={1100}>
+          <ModalNewUser />
+          <View
+            style={[styles.hideModalButton, {backgroundColor: '#024189dd'}]}>
+            <Pressable style={{width: '100%'}} onPress={toggleModal4}>
               <Text
                 style={{
                   fontFamily: 'PTSerif-Italic',
