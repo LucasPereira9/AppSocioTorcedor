@@ -13,5 +13,8 @@ My App from scratch, fan partner! with team information and ticket purchase.
 ## YARN INSTALL
 download project dependencies using Yarn install
 
+## YARN START
+this command is used in a different terminal to start a server.
+
 ## NPX REACT-NATIVE RUN-ANDROID // Or YARN ANDROID
 to download the app.
