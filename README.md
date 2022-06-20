@@ -1,10 +1,17 @@
 # AppSocioTorcedor
-Meu App do zero, socio torcedor! com iformações da equipe e compra de ingressos.
+My App from scratch, fan partner! with team information and ticket purchase.
 
-# Utilizei neste projeto:
-* firebase para criaçao de novas contas e o login.
-* reactNavigation para a navegação entre telas.
-* vector icons para os icones.
-* PanResponder para a animação na tela home.
-* os Reacthooks para configurar os estados dos componentes do projeto.
-* styled components para uma estruturação mais precisa e escalavel.
+# Used in this project:
+* firebase for creating new accounts and logging in.
+* reactNavigation for navigation between screens.
+* vector icons for the icons.
+* PanResponder for home screen animation.
+* Reacthooks to configure the states of project components.
+* styled components for more precise and scalable structuring.
+
+# USAGE
+## YARN INSTALL
+download project dependencies using Yarn install
+
+## NPX REACT-NATIVE RUN-ANDROID // Or YARN ANDROID
+to download the app.
