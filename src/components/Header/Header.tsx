@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Container} from '../../pages/home/style';
-import {Image, StyleSheet, Text} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {Top} from './style';
 import Details from '../AccountDetails/Details';
 
 const Header = () => {
-  const [name, setName] = useState('');
   return (
     <Container>
       <Top>

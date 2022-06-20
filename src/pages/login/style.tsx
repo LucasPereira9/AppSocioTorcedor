@@ -11,7 +11,7 @@ export const LoginContainer = styled.View`
   background: #ffffffcf;
   position: absolute;
   elevation: 180;
-  top: 45%;
+  top: 46%;
   left: 26%;
   border-radius: 20px;
   align-items: center;

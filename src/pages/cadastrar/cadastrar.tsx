@@ -31,7 +31,7 @@ export const Cadastrar = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const isEmpty = email === '' || password === '';
+  const isEmpty = email === '' || password === '' || name === '';
 
   const [isModalVisible, setModalVisible] = useState(false);
   const toggleModal = () => {
