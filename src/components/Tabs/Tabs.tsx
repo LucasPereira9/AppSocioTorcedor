@@ -2,9 +2,12 @@ import React from 'react';
 import {Container, Icon, Notification} from './styles';
 import {ScrollView, Text, StyleSheet, Alert} from 'react-native';
 import Caretdown from 'react-native-vector-icons/Feather';
+import Trophy from 'react-native-vector-icons/EvilIcons';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 const Tabs = ({translateY}: any) => {
+  const navigation = useNavigation();
   return (
     <Container
       style={{
@@ -26,19 +29,19 @@ const Tabs = ({translateY}: any) => {
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <TouchableOpacity
           style={styles.tabs}
-          onPress={() =>
-            Alert.alert('Perdão torcedor! Botão em manutenção...')
-          }>
-          <Icon>
-            <Caretdown name="star" size={38} color="#ffffffdf" />
+          onPress={() => {
+            navigation.navigate('TabRoutes');
+          }}>
+          <Icon style={{minWidth: 100}}>
+            <Trophy name="trophy" size={60} color="#ffffffdf" />
           </Icon>
-          <Text style={styles.text}>Salão de Troféus</Text>
+          <Text style={[styles.text, {bottom: 4}]}>Salão de Troféus</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tabs}
-          onPress={() =>
-            Alert.alert('Perdão torcedor! Botão em manutenção...')
-          }>
+          onPress={() => {
+            Alert.alert('Perdão torcedor! Botão em manutenção...');
+          }}>
           <Icon>
             <Caretdown name="calendar" size={38} color="#ffffffdf" />
           </Icon>

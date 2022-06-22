@@ -6,6 +6,7 @@ import Home from './src/pages/home/home';
 import {Cadastrar} from './src/pages/cadastrar/cadastrar';
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {ActivityIndicator, View} from 'react-native';
+import TabRoutes from './src/pages/home/homePages/trophyPage/trophy';
 
 const Stack = createStackNavigator();
 
@@ -35,11 +36,12 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        headerMode="none"
+        screenOptions={{headerShown: false}}
         initialRouteName={user ? 'Cadastrar' : 'Login'}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Cadastrar" component={Cadastrar} />
+        <Stack.Screen name="TabRoutes" component={TabRoutes} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {StatusBar} from 'native-base';
 import React, {useState} from 'react';
 import {
+  ActivityIndicator,
   Image,
   Keyboard,
   Pressable,
@@ -137,12 +138,7 @@ export const Cadastrar = () => {
           ) : (
             <TouchableOpacity onPress={SignUp} style={styles.button}>
               {isLoading ? (
-                <LottieView
-                  source={require('../../assets/animations/ballAnimation/Ball.json')}
-                  autoPlay
-                  loop
-                  style={{minHeight: 64, top: -4}}
-                />
+                <ActivityIndicator size="large" color="#ffffff" />
               ) : (
                 <Text style={styles.buttonText}>Cadastrar</Text>
               )}
