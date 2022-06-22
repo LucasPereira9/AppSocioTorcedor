@@ -109,13 +109,13 @@ export default Tabs;
 const styles = StyleSheet.create({
   text: {
     fontSize: 15,
-    color: '#000000bc',
+    color: '#ffffff',
     textAlign: 'center',
     fontFamily: 'Poppins-Light',
   },
   text2: {
     fontSize: 15,
-    color: '#050505bb',
+    color: '#ffffff',
 
     textAlign: 'center',
     marginBottom: 6,

@@ -1,19 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Container} from '../../pages/home/style';
-import {Image, StyleSheet, Text} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {Top} from './style';
 import Details from '../AccountDetails/Details';
 
 const Header = () => {
-  const [name, setName] = useState('');
   return (
     <Container>
-      <Top>
-        <Image
-          style={styles.imagem}
-          source={require('../../assets/Barcelona.jpg')}
-        />
-      </Top>
+      <Image
+        style={styles.imagem}
+        source={require('../../assets/Barcelona.jpg')}
+      />
       <Details />
     </Container>
   );
@@ -23,9 +20,9 @@ export default Header;
 
 const styles = StyleSheet.create({
   imagem: {
+    top: '3%',
     width: 130,
     height: 107,
-    right: '5%',
   },
   text: {
     fontSize: 29,

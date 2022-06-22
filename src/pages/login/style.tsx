@@ -6,14 +6,13 @@ export const Container = styled.View`
   align-items: center;
 `;
 export const LoginContainer = styled.View`
-  flex: 1;
-  width: 345px;
+  width: 50%;
   height: 322px;
   background: #ffffffcf;
   position: absolute;
   elevation: 180;
   top: 45%;
-  left: 26%;
+  left: 25%;
   border-radius: 20px;
   align-items: center;
   justify-content: center;
@@ -22,4 +21,9 @@ export const LoginContainer = styled.View`
 export const InputContent = styled.View`
   justify-content: space-between;
   text-align: right;
+`;
+export const ContainerBottom = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 80%;
 `;

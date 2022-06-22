@@ -63,7 +63,7 @@ const Details = () => {
         {...panResponder.panHandlers}>
         <Caretdown
           // eslint-disable-next-line react-native/no-inline-styles
-          style={{position: 'relative', left: 170}}
+          style={{position: 'relative', left: '45%'}}
           name="chevrons-down"
           size={35}
           color="#FFF"
@@ -84,7 +84,7 @@ const Details = () => {
           <Text style={styles.value}>
             R$
             {isOpenEye ? (
-              '78,15'
+              '0,00'
             ) : (
               <View
                 // eslint-disable-next-line react-native/no-inline-styles
@@ -173,11 +173,11 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   BuyButton: {
-    width: 160,
+    width: '46%',
     height: 45,
     backgroundColor: '#024189f8',
     marginTop: 25,
-    marginLeft: 174,
+    left: '50%',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 5,
