@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
+  justify-content: center;
   flex: 1;
   align-items: center;
   z-index: 10;
@@ -8,8 +9,8 @@ export const Container = styled.View`
 
 export const DetailContainer = styled.View`
   display: flex;
-  width: 350px;
-  height: 340px;
+  min-width: 90%;
+  min-height: 58%;
   background: #b41e1e;
   margin: 18px;
   border-radius: 12px;

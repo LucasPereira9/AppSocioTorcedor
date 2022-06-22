@@ -155,7 +155,7 @@ const login = () => {
           )}
           <ContainerBottom>
             <TouchableOpacity
-              style={[styles.accountCreate, {width: 140, right: 16}]}
+              style={[styles.accountCreate, {width: '120%'}]}
               onPress={handleForgotPassword}>
               <Text style={styles.acoountCreateText}>Esqueci a Senha</Text>
             </TouchableOpacity>

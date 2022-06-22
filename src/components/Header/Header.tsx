@@ -7,12 +7,10 @@ import Details from '../AccountDetails/Details';
 const Header = () => {
   return (
     <Container>
-      <Top>
-        <Image
-          style={styles.imagem}
-          source={require('../../assets/Barcelona.jpg')}
-        />
-      </Top>
+      <Image
+        style={styles.imagem}
+        source={require('../../assets/Barcelona.jpg')}
+      />
       <Details />
     </Container>
   );
@@ -22,9 +20,9 @@ export default Header;
 
 const styles = StyleSheet.create({
   imagem: {
+    top: '3%',
     width: 130,
     height: 107,
-    right: '5%',
   },
   text: {
     fontSize: 29,

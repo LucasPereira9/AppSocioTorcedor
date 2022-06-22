@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled(Animated.View)`
   position: absolute;
-  top: 21px;
+  top: 7%;
   z-index: -20;
 `;
 export const QRcodeView = styled.View`
