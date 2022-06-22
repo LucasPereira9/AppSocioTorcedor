@@ -24,7 +24,7 @@ export default function TabRoutes() {
               style={{
                 backgroundColor: focused ? '#9b989852' : '#fff',
                 minWidth: '100%',
-                minHeight: '150%',
+                minHeight: '156%',
                 top: 14,
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -51,7 +51,7 @@ export default function TabRoutes() {
               style={{
                 backgroundColor: focused ? '#9b989852' : '#fff',
                 minWidth: '100%',
-                minHeight: '150%',
+                minHeight: '156%',
                 top: 14,
                 alignItems: 'center',
                 justifyContent: 'center',

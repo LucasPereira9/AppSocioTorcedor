@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Container} from '../../../../cadastrar/styles';
+import {Container} from '../../../../register/styles';
 import LottieView from 'lottie-react-native';
 
 const Trophy = () => {

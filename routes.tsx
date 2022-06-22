@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import React, {useEffect, useState} from 'react';
 import Login from './src/pages/login/login';
 import Home from './src/pages/home/home';
-import {Cadastrar} from './src/pages/cadastrar/cadastrar';
+import {Register} from './src/pages/register/register';
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {ActivityIndicator, View} from 'react-native';
 import TabRoutes from './src/pages/home/homePages/trophyPage/trophy';
@@ -40,7 +40,7 @@ const Routes = () => {
         initialRouteName={user ? 'Cadastrar' : 'Login'}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Cadastrar" component={Cadastrar} />
+        <Stack.Screen name="Cadastrar" component={Register} />
         <Stack.Screen name="TabRoutes" component={TabRoutes} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -21,9 +21,8 @@ import Modal from 'react-native-modal';
 import ModalEmail from '../../components/modal/invalidEmail';
 import ModalEmailInUse from '../../components/modal/emailAlreadyRegistered';
 import ModalPassword from '../../components/modal/weakPassword';
-import LottieView from 'lottie-react-native';
 
-export const Cadastrar = () => {
+export const Register = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigation();
 
