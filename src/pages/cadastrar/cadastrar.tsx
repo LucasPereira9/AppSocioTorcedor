@@ -4,7 +4,6 @@ import {useNavigation} from '@react-navigation/native';
 import {StatusBar} from 'native-base';
 import React, {useState} from 'react';
 import {
-  ActivityIndicator,
   Image,
   Keyboard,
   Pressable,
@@ -14,7 +13,6 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
-  Alert,
 } from 'react-native';
 import {Container, InputContent, LoginContainer} from './styles';
 import auth from '@react-native-firebase/auth';
@@ -22,7 +20,7 @@ import Modal from 'react-native-modal';
 import ModalEmail from '../../components/modal/invalidEmail';
 import ModalEmailInUse from '../../components/modal/emailAlreadyRegistered';
 import ModalPassword from '../../components/modal/weakPassword';
-import ModalNewUser from '../../components/modal/registeredUser';
+import LottieView from 'lottie-react-native';
 
 export const Cadastrar = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -31,6 +29,7 @@ export const Cadastrar = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const isEmpty = email === '' || password === '' || name === '';
 
   const [isModalVisible, setModalVisible] = useState(false);
@@ -45,10 +44,6 @@ export const Cadastrar = () => {
   const toggleModal3 = () => {
     setModalVisible3(!isModalVisible3);
   };
-  const [isModalVisible4, setModalVisible4] = useState(false);
-  const toggleModal4 = () => {
-    setModalVisible4(!isModalVisible4);
-  };
 
   function SignUp() {
     setIsLoading(true);
@@ -58,7 +53,6 @@ export const Cadastrar = () => {
       .then(userCredential => {
         console.log('user', userCredential, 'aqui o nome', name);
         navigation.navigate('Login');
-        setModalVisible4(true);
         setEmail('');
         setPassword('');
       })
@@ -143,7 +137,12 @@ export const Cadastrar = () => {
           ) : (
             <TouchableOpacity onPress={SignUp} style={styles.button}>
               {isLoading ? (
-                <ActivityIndicator size="large" color="#ffffff" />
+                <LottieView
+                  source={require('../../assets/animations/ballAnimation/Ball.json')}
+                  autoPlay
+                  loop
+                  style={{minHeight: 64, top: -4}}
+                />
               ) : (
                 <Text style={styles.buttonText}>Cadastrar</Text>
               )}
@@ -231,31 +230,6 @@ export const Cadastrar = () => {
           <ModalEmailInUse />
           <View style={styles.hideModalButton}>
             <Pressable style={{width: '100%'}} onPress={toggleModal2}>
-              <Text
-                style={{
-                  fontFamily: 'PTSerif-Italic',
-                  alignSelf: 'center',
-                  color: '#fff',
-                }}>
-                OK
-              </Text>
-            </Pressable>
-          </View>
-        </Modal>
-
-        <Modal
-          isVisible={isModalVisible4}
-          onBackdropPress={() => setModalVisible4(false)}
-          animationIn={'zoomInDown'}
-          animationOut={'zoomOutUp'}
-          animationInTiming={1000}
-          animationOutTiming={800}
-          backdropTransitionInTiming={1000}
-          backdropTransitionOutTiming={1100}>
-          <ModalNewUser />
-          <View
-            style={[styles.hideModalButton, {backgroundColor: '#024189dd'}]}>
-            <Pressable style={{width: '100%'}} onPress={toggleModal4}>
               <Text
                 style={{
                   fontFamily: 'PTSerif-Italic',

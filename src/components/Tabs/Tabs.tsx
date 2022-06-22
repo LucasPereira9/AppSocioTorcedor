@@ -30,6 +30,16 @@ const Tabs = ({translateY}: any) => {
             Alert.alert('Perdão torcedor! Botão em manutenção...')
           }>
           <Icon>
+            <Caretdown name="star" size={38} color="#ffffffdf" />
+          </Icon>
+          <Text style={styles.text}>Salão de Troféus</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tabs}
+          onPress={() =>
+            Alert.alert('Perdão torcedor! Botão em manutenção...')
+          }>
+          <Icon>
             <Caretdown name="calendar" size={38} color="#ffffffdf" />
           </Icon>
           <Text style={styles.text}>Calendário</Text>
@@ -52,7 +62,7 @@ const Tabs = ({translateY}: any) => {
             )
           }>
           <Notification>
-            <Text style={styles.text}>3</Text>
+            <Text style={[styles.text, {color: '#000000'}]}>3</Text>
           </Notification>
           <Icon>
             <Caretdown name="refresh-ccw" size={38} color="#ffffffdf" />

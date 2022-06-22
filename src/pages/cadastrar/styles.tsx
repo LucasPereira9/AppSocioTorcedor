@@ -8,7 +8,7 @@ export const Container = styled.View`
 export const LoginContainer = styled.View`
   flex: 1;
   width: 80%;
-  height: 68%;
+  height: 65%;
   elevation: 180;
   background: #ffffffb3;
   position: absolute;

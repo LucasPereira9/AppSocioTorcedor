@@ -16,8 +16,6 @@ import {
   TextInput,
   Keyboard,
   Pressable,
-  ActivityIndicator,
-  Alert,
 } from 'react-native';
 import {
   TouchableOpacity,
@@ -30,6 +28,7 @@ import ModalContent from '../../components/modal/invalidCredentials';
 import ModalInvalidEmail from '../../components/modal/invalidEmail';
 import ModalNewPassword from '../../components/modal/resetPassword';
 import ModalUser from '../../components/modal/userNotFound';
+import LottieView from 'lottie-react-native';
 
 const login = () => {
   const navigation = useNavigation();
@@ -147,7 +146,12 @@ const login = () => {
           ) : (
             <TouchableOpacity style={styles.button} onPress={Logar}>
               {isLoading ? (
-                <ActivityIndicator size="large" color="#ffffff" />
+                <LottieView
+                  source={require('../../assets/animations/ballAnimation/Ball.json')}
+                  autoPlay
+                  loop
+                  style={{minHeight: 64, top: -4}}
+                />
               ) : (
                 <Text style={styles.buttonText}>Entrar</Text>
               )}
