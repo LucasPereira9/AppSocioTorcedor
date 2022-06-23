@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     left: 70,
   },
   img2: {
-    top: '3%',
+    top: '6%',
     width: 200,
     height: 200,
     position: 'absolute',

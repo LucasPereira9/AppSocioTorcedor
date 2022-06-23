@@ -1,7 +1,6 @@
 import React from 'react';
 import {Container} from '../../pages/home/style';
 import {Image, StyleSheet} from 'react-native';
-import {Top} from './style';
 import Details from '../AccountDetails/Details';
 
 const Header = () => {
@@ -20,7 +19,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   imagem: {
-    top: '3%',
+    top: '8%',
     width: 130,
     height: 107,
   },

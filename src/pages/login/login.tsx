@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   img2: {
-    top: '9%',
+    top: '13%',
     left: '32%',
     width: 260,
     height: 260,

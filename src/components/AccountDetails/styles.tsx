@@ -10,7 +10,7 @@ export const Container = styled.View`
 export const DetailContainer = styled.View`
   display: flex;
   min-width: 90%;
-  min-height: 58%;
+  min-height: 52%;
   background: #b41e1e;
   margin: 18px;
   border-radius: 12px;
