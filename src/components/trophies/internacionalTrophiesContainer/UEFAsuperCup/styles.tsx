@@ -1,6 +1,8 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View``;
+export const Container = styled.View`
+  bottom: 13%;
+`;
 
 export const TrophiesContainer = styled.View`
   flex-direction: row;
@@ -9,13 +11,12 @@ export const TrophiesContainer = styled.View`
 `;
 export const ShelfContainer = styled.View`
   width: 100%;
-  bottom: 4%;
+  bottom: 1%;
   align-items: center;
   z-index: -1;
 `;
 export const CompetitionContainer = styled.View`
   width: 100%;
-  height: 26%;
   align-items: center;
 `;
 export const DateContainer = styled.View`
@@ -24,5 +25,5 @@ export const DateContainer = styled.View`
   align-items: center;
   position: absolute;
   top: 23;
-  width: 55%;
+  width: 47%;
 `;

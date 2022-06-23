@@ -1,11 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {Container} from '../../../../register/styles';
 import LottieView from 'lottie-react-native';
 import ChampionsLeague from '../../../../../components/trophies/internacionalTrophiesContainer/championsLeague';
-import {TitleContainer} from './styles';
-import { Image } from 'react-native-svg';
+import SuperCup from '../../../../../components/trophies/internacionalTrophiesContainer/UEFAsuperCup';
 
 const InternationalTrophy = () => {
   const [loading, setIsloading] = useState(true);
@@ -28,6 +27,7 @@ const InternationalTrophy = () => {
       ) : (
         <ScrollView showsVerticalScrollIndicator={false}>
           <ChampionsLeague />
+          <SuperCup />
         </ScrollView>
       )}
     </Container>
