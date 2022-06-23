@@ -37,7 +37,7 @@ const Routes = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName={user ? 'Cadastrar' : 'Login'}>
+        initialRouteName={'TabRoutes'}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Cadastrar" component={Register} />

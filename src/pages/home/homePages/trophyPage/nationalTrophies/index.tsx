@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Container} from '../../../../register/styles';
 import LottieView from 'lottie-react-native';
 
-const Trophy = () => {
+const NationalTrophy = () => {
   const [loading, setIsloading] = useState(true);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Trophy = () => {
   );
 };
 
-export default Trophy;
+export default NationalTrophy;
 
 const styles = StyleSheet.create({
   lottieContainer: {

@@ -14,7 +14,7 @@ export default function TabRoutes() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: {minHeight: '10%', alignItems: 'center'},
+        tabBarStyle: {minHeight: '9%', alignItems: 'center'},
       }}>
       <Tab.Screen
         options={{
