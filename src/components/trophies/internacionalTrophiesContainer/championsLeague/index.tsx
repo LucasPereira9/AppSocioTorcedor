@@ -32,7 +32,7 @@ const ChampionsLeague = () => {
         />
       </Animated.View>
       <ShelfContainer>
-        <DateContainer style={{width: '82%', bottom: 9}}>
+        <DateContainer style={{width: '86%', bottom: 9}}>
           <Text style={styles.year}>1991 - 1992</Text>
           <Text style={styles.year}>2005 - 2006</Text>
           <Text style={styles.year}>2008 - 2009</Text>
@@ -81,11 +81,11 @@ const styles = StyleSheet.create({
     width: 84,
     height: 150,
     margin: 20,
-    top: 4,
   },
   year: {
     color: '#fff',
     fontSize: 12,
+    fontFamily: 'Poppins-SemiBoldItalic',
   },
   TrophiesContainer: {
     flexDirection: 'row',

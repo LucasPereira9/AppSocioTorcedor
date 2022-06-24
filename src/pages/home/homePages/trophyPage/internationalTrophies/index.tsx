@@ -5,6 +5,7 @@ import {Container} from '../../../../register/styles';
 import LottieView from 'lottie-react-native';
 import ChampionsLeague from '../../../../../components/trophies/internacionalTrophiesContainer/championsLeague';
 import SuperCup from '../../../../../components/trophies/internacionalTrophiesContainer/UEFAsuperCup';
+import WorldCup from '../../../../../components/trophies/internacionalTrophiesContainer/FIFAClubWorldCup';
 
 const InternationalTrophy = () => {
   const [loading, setIsloading] = useState(true);
@@ -12,7 +13,7 @@ const InternationalTrophy = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsloading(false);
-    }, 4200);
+    }, 1000);
   }, []);
   return (
     <Container style={{justifyContent: 'center'}}>
@@ -28,6 +29,7 @@ const InternationalTrophy = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
           <ChampionsLeague />
           <SuperCup />
+          <WorldCup />
         </ScrollView>
       )}
     </Container>

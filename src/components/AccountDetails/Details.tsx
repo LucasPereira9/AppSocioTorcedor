@@ -55,7 +55,7 @@ const Details = () => {
 
       Animated.timing(translateY, {
         toValue: opened ? 380 : 0,
-        duration: 200,
+        duration: 450,
         useNativeDriver: true,
       }).start(() => {
         offset = opened ? 380 : 0;
