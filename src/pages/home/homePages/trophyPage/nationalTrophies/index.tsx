@@ -3,13 +3,15 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import {Container} from '../../../../register/styles';
 import LottieView from 'lottie-react-native';
 import SpanishChampionship from '../../../../../components/trophies/nacionalTrophiesContainer/spanishChampionship';
+import KingCup from '../../../../../components/trophies/nacionalTrophiesContainer/kingCup';
+import SuperCupSpain from '../../../../../components/trophies/nacionalTrophiesContainer/spanishSuperCup';
 const NationalTrophy = () => {
   const [loading, setIsloading] = useState(true);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsloading(false);
-    }, 1000);
+    }, 3100);
   }, []);
   return (
     <Container>
@@ -22,8 +24,10 @@ const NationalTrophy = () => {
           />
         </View>
       ) : (
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <SpanishChampionship />
+          <KingCup />
+          <SuperCupSpain />
         </ScrollView>
       )}
     </Container>

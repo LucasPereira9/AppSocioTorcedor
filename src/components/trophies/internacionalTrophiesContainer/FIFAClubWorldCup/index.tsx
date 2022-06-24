@@ -13,7 +13,7 @@ const WorldCup = () => {
     <Container style={{bottom: '12%'}}>
       <CompetitionContainer>
         <Image
-          style={[styles.trophy, {width: '25%', flex: 1, top: 0}]}
+          style={[styles.trophy, {width: '45%', flex: 1, top: 0}]}
           source={require('../../../../assets/simboloWorldCup.png')}
         />
       </CompetitionContainer>

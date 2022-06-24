@@ -8,13 +8,12 @@ export const TrophiesContainer = styled.View`
 export const ShelfContainer = styled.View`
   width: 90%;
   left: 4%;
-  bottom: 3%;
+  top: 4%;
   align-items: center;
   z-index: -1;
 `;
 export const CompetitionContainer = styled.View`
-  min-width: 100%;
-  height: 33%;
+  width: 100%;
   align-items: center;
 `;
 export const DateContainer = styled.View`

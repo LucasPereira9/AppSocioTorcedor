@@ -13,7 +13,7 @@ const InternationalTrophy = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsloading(false);
-    }, 1000);
+    }, 4200);
   }, []);
   return (
     <Container style={{justifyContent: 'center'}}>

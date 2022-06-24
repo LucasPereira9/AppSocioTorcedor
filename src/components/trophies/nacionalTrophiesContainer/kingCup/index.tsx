@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Animated, Image, StyleSheet, Text} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {
   ShelfContainer,
   CompetitionContainer,
@@ -8,26 +8,26 @@ import {
   DateContainer,
 } from './styles';
 
-const SpanishChampionship = () => {
+const KingCup = () => {
   return (
-    <Container style={{bottom: 20}}>
+    <Container style={{bottom: '14%'}}>
       <CompetitionContainer>
         <Image
-          style={[styles.Image, {width: '80%'}]}
-          source={require('../../../../assets/SimbolLaliga.png')}
+          style={[styles.Image, {width: '10%', height: 180}]}
+          source={require('../../../../assets/SimbolCopaDoRei.png')}
           resizeMode="contain"
         />
       </CompetitionContainer>
-      <Animated.View style={styles.TrophiesContainer}>
+      <View style={styles.TrophiesContainer}>
         <Image
-          style={[styles.Image, {top: '17%', height: 150}]}
+          style={[styles.Image, {top: '26%'}]}
           resizeMode="contain"
-          source={require('../../../../assets/LaLiga.png')}
+          source={require('../../../../assets/CopaDoRei.png')}
         />
-      </Animated.View>
+      </View>
       <ShelfContainer>
         <DateContainer>
-          <Text style={styles.year}>26 títulos espanhóis</Text>
+          <Text style={styles.year}>31 títulos da Copa</Text>
         </DateContainer>
         <Image
           style={styles.shelf}
@@ -38,7 +38,7 @@ const SpanishChampionship = () => {
   );
 };
 
-export default SpanishChampionship;
+export default KingCup;
 
 const styles = StyleSheet.create({
   lottieContainer: {
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   Image: {
     flex: 1,
     minWidth: '100%',
-    height: 200,
+    height: 250,
   },
   year: {
     color: '#fff',
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   },
   TrophiesContainer: {
     alignItems: 'center',
-    bottom: '4%',
+    bottom: '6%',
+    maxWidth: '100%',
   },
 });
