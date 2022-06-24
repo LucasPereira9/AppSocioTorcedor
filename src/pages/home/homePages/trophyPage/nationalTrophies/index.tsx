@@ -9,7 +9,7 @@ const NationalTrophy = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsloading(false);
-    }, 4200);
+    }, 3200);
   }, []);
   return (
     <Container>

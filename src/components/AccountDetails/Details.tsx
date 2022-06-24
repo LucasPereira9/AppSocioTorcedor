@@ -16,120 +16,148 @@ import {
   View,
   Alert,
   Animated,
-  PanResponder,
 } from 'react-native';
 import Background from '../Background/Background';
 import Tabs from '../Tabs/Tabs';
+import {PanGestureHandler, State} from 'react-native-gesture-handler';
 
 const Details = () => {
   const [isOpenEye, setIsOpenEye] = useState(true);
 
-  const pan = useState(new Animated.ValueXY())[0];
+  let offset = 0;
+  const translateY = new Animated.Value(0);
 
-  const panResponder = useState(
-    PanResponder.create({
-      onMoveShouldSetPanResponder: () => true,
-      onPanResponderGrant: () => {
-        pan.setOffset({
-          x: pan.x._value,
-          y: pan.y._value,
-        });
+  const animatedEvent = Animated.event(
+    [
+      {
+        nativeEvent: {
+          translationY: translateY,
+        },
       },
-      onPanResponderMove: Animated.event([null, {dy: pan.y}]),
-      onPanResponderRelease: () => {
-        pan.flattenOffset();
-      },
-    }),
-  )[0];
+    ],
+    {useNativeDriver: true},
+  );
+
+  function onHandlerStateChanged(event) {
+    if (event.nativeEvent.oldState === State.ACTIVE) {
+      let opened = false;
+      const {translationY} = event.nativeEvent;
+
+      offset += translationY;
+
+      if (translationY >= 50) {
+        opened = true;
+      } else {
+        translateY.setValue(offset);
+        translateY.setOffset(0);
+        offset = 0;
+      }
+
+      Animated.timing(translateY, {
+        toValue: opened ? 380 : 0,
+        duration: 200,
+        useNativeDriver: true,
+      }).start(() => {
+        offset = opened ? 380 : 0;
+        translateY.setOffset(offset);
+        translateY.setValue(0);
+      });
+    }
+  }
+
   return (
     <Container>
-      <Background translateY={pan.y} />
-      <Animated.View
-        style={{
-          transform: [
-            {
-              translateY: pan.y.interpolate({
-                inputRange: [-290, 0, 360],
-                outputRange: [-20, 0, 360],
-                extrapolate: 'clamp',
-              }),
-            },
-          ],
-          // opacity: pan.y.interpolate({
-          //   inputRange: [0, 150],
-          //   outputRange: [0, 1],
-          // }),
-        }}
-        {...panResponder.panHandlers}>
-        <Caretdown
-          // eslint-disable-next-line react-native/no-inline-styles
-          style={{position: 'relative', left: '45%'}}
-          name="chevrons-down"
-          size={35}
-          color="#FFF"
-        />
-        <DetailContainer>
-          <Icon>
-            <Caretdown name="credit-card" size={24} color="#ffffffdf" />
-            <Caretdown
-              name={isOpenEye ? 'eye-off' : 'eye'}
-              size={38}
-              color="#ffffffd6"
-              onPress={() => {
-                setIsOpenEye(!isOpenEye);
-              }}
-            />
-          </Icon>
-          <Text style={styles.text}>Saldo Disponivel</Text>
-          <Text style={styles.value}>
-            R$
-            {isOpenEye ? (
-              '0,00'
-            ) : (
-              <View
-                // eslint-disable-next-line react-native/no-inline-styles
-                style={{
-                  backgroundColor: '#302d2d6e',
-                  borderRadius: 15,
-                  height: 32,
-                  width: 100,
+      <Background translateY={translateY} />
+      <PanGestureHandler
+        onGestureEvent={animatedEvent}
+        onHandlerStateChange={onHandlerStateChanged}>
+        <Animated.View
+          style={{
+            transform: [
+              {
+                translateY: translateY.interpolate({
+                  inputRange: [-290, 0, 360],
+                  outputRange: [-20, 0, 360],
+                  extrapolate: 'clamp',
+                }),
+              },
+            ],
+            // opacity: pan.y.interpolate({
+            //   inputRange: [0, 150],
+            //   outputRange: [0, 1],
+            // }),
+          }}>
+          <Caretdown
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{position: 'relative', left: '45%'}}
+            name="chevrons-down"
+            size={35}
+            color="#FFF"
+          />
+          <DetailContainer>
+            <Icon>
+              <Caretdown name="credit-card" size={24} color="#ffffffdf" />
+              <Caretdown
+                name={isOpenEye ? 'eye-off' : 'eye'}
+                size={38}
+                color="#ffffffd6"
+                onPress={() => {
+                  setIsOpenEye(!isOpenEye);
                 }}
               />
-            )}
-          </Text>
-          <Content>
-            <TextContent>
-              <Text style={styles.text2}>Proximo Jogo:</Text>
-              <Text style={styles.text2}>22/03 ás 14:00</Text>
-            </TextContent>
+            </Icon>
+            <Text style={styles.text}>Saldo Disponivel</Text>
+            <Text style={styles.value}>
+              R$
+              {isOpenEye ? (
+                '0,00'
+              ) : (
+                <View
+                  // eslint-disable-next-line react-native/no-inline-styles
+                  style={{
+                    backgroundColor: '#302d2d6e',
+                    borderRadius: 15,
+                    height: 32,
+                    width: 100,
+                  }}
+                />
+              )}
+            </Text>
+            <Content>
+              <TextContent>
+                <Text style={styles.text2}>Proximo Jogo:</Text>
+                <Text style={styles.text2}>22/03 ás 14:00</Text>
+              </TextContent>
 
-            <NextGame>
-              <Image
-                style={styles.image}
-                source={require('../../assets/reservabarça.jpg')}
-              />
-              <Caretdown
-                style={styles.versus}
-                name="x"
-                size={28}
-                color="#ffffffd6"
-              />
-              <Image
-                style={styles.image2}
-                source={require('../../assets/RealMadri.jpg')}
-              />
-            </NextGame>
-            <TouchableOpacity
-              style={styles.BuyButton}
-              onPress={() =>
-                Alert.alert('Perdão torcedor! Botão em manutenção...')
-              }>
-              <Text style={styles.BuyButtonText}>Comprar Ingresso</Text>
-            </TouchableOpacity>
-          </Content>
-        </DetailContainer>
-      </Animated.View>
-      <Tabs translateY={pan.y} />
+              <NextGame>
+                <Image
+                  style={styles.image}
+                  source={require('../../assets/reservabarça.jpg')}
+                />
+                <Caretdown
+                  style={styles.versus}
+                  name="x"
+                  size={28}
+                  color="#ffffffd6"
+                />
+                <Image
+                  style={styles.image2}
+                  source={require('../../assets/RealMadri.jpg')}
+                />
+              </NextGame>
+              <TouchableOpacity
+                style={styles.BuyButton}
+                onPress={() =>
+                  Alert.alert('Perdão torcedor! Botão em manutenção...')
+                }>
+                <Text style={styles.BuyButtonText}>Comprar Ingresso</Text>
+              </TouchableOpacity>
+            </Content>
+          </DetailContainer>
+        </Animated.View>
+      </PanGestureHandler>
+
+      <Tabs translateY={translateY} />
     </Container>
   );
 };
