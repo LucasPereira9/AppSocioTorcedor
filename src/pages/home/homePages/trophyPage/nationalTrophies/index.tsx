@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {Container} from '../../../../register/styles';
 import LottieView from 'lottie-react-native';
-
+import SpanishChampionship from '../../../../../components/trophies/nacionalTrophiesContainer/spanishChampionship';
 const NationalTrophy = () => {
   const [loading, setIsloading] = useState(true);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsloading(false);
-    }, 3200);
+    }, 1000);
   }, []);
   return (
     <Container>
@@ -22,7 +22,9 @@ const NationalTrophy = () => {
           />
         </View>
       ) : (
-        <Text style={{color: '#fff'}}>nacional!</Text>
+        <ScrollView>
+          <SpanishChampionship />
+        </ScrollView>
       )}
     </Container>
   );
