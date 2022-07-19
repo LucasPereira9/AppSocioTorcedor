@@ -16,6 +16,7 @@ import {
   TextInput,
   Keyboard,
   Pressable,
+  ActivityIndicator,
 } from 'react-native';
 import {
   TouchableOpacity,
@@ -146,12 +147,7 @@ const login = () => {
           ) : (
             <TouchableOpacity style={styles.button} onPress={Logar}>
               {isLoading ? (
-                <LottieView
-                  source={require('../../assets/animations/ballAnimation/Ball.json')}
-                  autoPlay
-                  loop
-                  style={{minHeight: 64, top: -4}}
-                />
+                <ActivityIndicator size="large" color="#ffffff" />
               ) : (
                 <Text style={styles.buttonText}>Entrar</Text>
               )}
@@ -287,7 +283,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   img2: {
-    top: '9%',
+    top: '13%',
     left: '32%',
     width: 260,
     height: 260,

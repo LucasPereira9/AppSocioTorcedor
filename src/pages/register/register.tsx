@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {StatusBar} from 'native-base';
 import React, {useState} from 'react';
 import {
+  ActivityIndicator,
   Image,
   Keyboard,
   Pressable,
@@ -20,9 +21,8 @@ import Modal from 'react-native-modal';
 import ModalEmail from '../../components/modal/invalidEmail';
 import ModalEmailInUse from '../../components/modal/emailAlreadyRegistered';
 import ModalPassword from '../../components/modal/weakPassword';
-import LottieView from 'lottie-react-native';
 
-export const Cadastrar = () => {
+export const Register = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigation();
 
@@ -137,12 +137,7 @@ export const Cadastrar = () => {
           ) : (
             <TouchableOpacity onPress={SignUp} style={styles.button}>
               {isLoading ? (
-                <LottieView
-                  source={require('../../assets/animations/ballAnimation/Ball.json')}
-                  autoPlay
-                  loop
-                  style={{minHeight: 64, top: -4}}
-                />
+                <ActivityIndicator size="large" color="#ffffff" />
               ) : (
                 <Text style={styles.buttonText}>Cadastrar</Text>
               )}
@@ -251,7 +246,7 @@ const styles = StyleSheet.create({
     left: 70,
   },
   img2: {
-    top: '3%',
+    top: '6%',
     width: 200,
     height: 200,
     position: 'absolute',
