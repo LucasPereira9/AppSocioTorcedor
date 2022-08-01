@@ -19,7 +19,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   imagem: {
-    top: '8%',
+    top: '5%',
     width: 130,
     height: 107,
   },

@@ -14,12 +14,13 @@ export const QRcodeView = styled.View`
   align-items: center;
   margin-left: 90px;
   background: #fff;
+  bottom: 30;
 `;
 
 export const OptionsContainer = styled.View`
   height: 130px;
   width: 320px;
-  margin-top: 30px;
+  margin-top: 6px;
   justify-content: space-around;
   border-top-width: 1px;
   border-color: #ff00005e;

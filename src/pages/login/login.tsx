@@ -29,7 +29,6 @@ import ModalContent from '../../components/modal/invalidCredentials';
 import ModalInvalidEmail from '../../components/modal/invalidEmail';
 import ModalNewPassword from '../../components/modal/resetPassword';
 import ModalUser from '../../components/modal/userNotFound';
-import LottieView from 'lottie-react-native';
 
 const login = () => {
   const navigation = useNavigation();
@@ -37,25 +36,12 @@ const login = () => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const [isModalVisible, setModalVisible] = useState(false);
-  const [isModalVisible2, setModalVisible2] = useState(false);
-  const [isModalVisible3, setModalVisible3] = useState(false);
-  const [isModalVisible4, setModalVisible4] = useState(false);
+  const [incorrectDataModal, setIncorrectDataModal] = useState(false);
+  const [newPasswordModal, setNewPasswordModal] = useState(false);
+  const [invalidEmailModal, setInvalidEmailModal] = useState(false);
+  const [userNotFoundModal, setUserNotFoundModal] = useState(false);
 
   const isEmpty = email === '' || password === '';
-
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
-  const toggleModal2 = () => {
-    setModalVisible2(!isModalVisible2);
-  };
-  const toggleModal3 = () => {
-    setModalVisible3(!isModalVisible3);
-  };
-  const toggleModal4 = () => {
-    setModalVisible4(!isModalVisible4);
-  };
 
   function Logar() {
     setIsLoading(true);
@@ -70,7 +56,7 @@ const login = () => {
       .catch(error => {
         if (error.code === 'auth/invalid-email' || 'auth/wrong-password') {
           setIsLoading(false);
-          setModalVisible(true);
+          setIncorrectDataModal(true);
         }
 
         console.error(error);
@@ -79,19 +65,19 @@ const login = () => {
 
   function handleForgotPassword() {
     if (email === '') {
-      setModalVisible3(true);
+      setInvalidEmailModal(true);
     } else {
       auth()
         .sendPasswordResetEmail(email)
         .then(() => {
-          setModalVisible2(true);
+          setNewPasswordModal(true);
         })
         .catch(error => {
           if (error.code === 'auth/invalid-email') {
-            setModalVisible3(true);
+            setInvalidEmailModal(true);
           }
           if (error.code === 'auth/user-not-found') {
-            setModalVisible4(true);
+            setUserNotFoundModal(true);
           }
 
           console.error(error);
@@ -173,8 +159,8 @@ const login = () => {
       </TouchableWithoutFeedback>
 
       <Modal
-        isVisible={isModalVisible}
-        onBackdropPress={() => setModalVisible(false)}
+        isVisible={incorrectDataModal}
+        onBackdropPress={() => setIncorrectDataModal(false)}
         animationIn={'zoomInDown'}
         animationOut={'zoomOutUp'}
         animationInTiming={1000}
@@ -183,7 +169,11 @@ const login = () => {
         backdropTransitionOutTiming={1100}>
         <ModalContent />
         <View style={styles.hideModalButton}>
-          <Pressable style={{width: '100%'}} onPress={toggleModal}>
+          <Pressable
+            style={{width: '100%'}}
+            onPress={() => {
+              setIncorrectDataModal(false);
+            }}>
             <Text
               style={{
                 fontFamily: 'PTSerif-Italic',
@@ -197,8 +187,8 @@ const login = () => {
       </Modal>
 
       <Modal
-        isVisible={isModalVisible2}
-        onBackdropPress={() => setModalVisible2(false)}
+        isVisible={newPasswordModal}
+        onBackdropPress={() => setNewPasswordModal(false)}
         animationIn={'zoomInDown'}
         animationOut={'zoomOutUp'}
         animationInTiming={1000}
@@ -207,7 +197,11 @@ const login = () => {
         backdropTransitionOutTiming={1100}>
         <ModalNewPassword />
         <View style={[styles.hideModalButton, {backgroundColor: '#024189dd'}]}>
-          <Pressable style={{width: '100%'}} onPress={toggleModal2}>
+          <Pressable
+            style={{width: '100%'}}
+            onPress={() => {
+              setNewPasswordModal(false);
+            }}>
             <Text
               style={{
                 fontFamily: 'PTSerif-Italic',
@@ -221,8 +215,8 @@ const login = () => {
       </Modal>
 
       <Modal
-        isVisible={isModalVisible3}
-        onBackdropPress={() => setModalVisible3(false)}
+        isVisible={invalidEmailModal}
+        onBackdropPress={() => setInvalidEmailModal(false)}
         animationIn={'zoomInDown'}
         animationOut={'zoomOutUp'}
         animationInTiming={1000}
@@ -231,7 +225,11 @@ const login = () => {
         backdropTransitionOutTiming={1100}>
         <ModalInvalidEmail />
         <View style={styles.hideModalButton}>
-          <Pressable style={{width: '100%'}} onPress={toggleModal3}>
+          <Pressable
+            style={{width: '100%'}}
+            onPress={() => {
+              setInvalidEmailModal(false);
+            }}>
             <Text
               style={{
                 fontFamily: 'PTSerif-Italic',
@@ -245,8 +243,8 @@ const login = () => {
       </Modal>
 
       <Modal
-        isVisible={isModalVisible4}
-        onBackdropPress={() => setModalVisible4(false)}
+        isVisible={userNotFoundModal}
+        onBackdropPress={() => setUserNotFoundModal(false)}
         animationIn={'zoomInDown'}
         animationOut={'zoomOutUp'}
         animationInTiming={1000}
@@ -255,7 +253,11 @@ const login = () => {
         backdropTransitionOutTiming={1100}>
         <ModalUser />
         <View style={styles.hideModalButton}>
-          <Pressable style={{width: '100%'}} onPress={toggleModal4}>
+          <Pressable
+            style={{width: '100%'}}
+            onPress={() => {
+              setUserNotFoundModal(false);
+            }}>
             <Text
               style={{
                 fontFamily: 'Poppins-SemiBold',
@@ -283,7 +285,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   img2: {
-    top: '13%',
+    top: '10%',
     left: '32%',
     width: 260,
     height: 260,
